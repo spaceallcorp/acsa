@@ -40,14 +40,52 @@
   margin-bottom: 15px;
 }
 
-.footer-links a {
+.footer-links a,
+.policies-accordion summary,
+.policies-submenu a {
   text-decoration: none;
   color: rgba(8, 8, 8, 1);
   transition: color 0.3s;
 }
 
-.footer-links a:hover {
+.footer-links a:hover,
+.policies-accordion summary:hover,
+.policies-submenu a:hover {
   color: #85afff;
+}
+
+.policies-accordion {
+  display: block;
+}
+
+.policies-accordion summary {
+  list-style: none;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.5;
+  display: block;
+}
+
+.policies-accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+.policies-submenu {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0 0;
+  display: block;
+}
+
+.policies-submenu li {
+  margin-bottom: 10px;
+}
+
+.policies-submenu a {
+  font-size: 12px;
+  line-height: 1.5;
+  display: inline-block;
 }
 
 /* Social Icons */

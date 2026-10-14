@@ -152,6 +152,14 @@ export const routes: Routes = [
   },
 
   {
+    path: 'community-lists',
+    loadComponent: () =>
+      import('./paginas/community-lists/community-lists.component').then(
+        (m) => m.CommunityListsComponent,
+      ),
+  },
+
+  {
     path: 'artigos',
     loadComponent: () =>
       import('./layout/artigo-lista/artigo-lista.component').then(

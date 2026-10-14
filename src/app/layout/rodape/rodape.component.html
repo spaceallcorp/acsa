@@ -30,17 +30,26 @@
             <div class="footer-column">
                 <ul class="footer-links">
                     <li><b>{{'link.uteis' | translate }}</b></li>
+                    <li><a routerLink="/community-lists">{{ 'communityLists.footerLink' | translate }}</a></li>
                     <li><a href="https://www.angonix.net/">Angonix</a></li>
                     <li><a href="https://clouds2africa.com/#!/">Clouds2Africa</a></li>
-                    <li><a>{{'termos.condicoes' | translate }}</a></li>
-                    <li><a routerLink="/privacy-policies">{{'politica.privacidade' | translate }}</a></li>
-                    <li><a routerLink="/cookies-policies">{{'politica.cookies' | translate }}</a></li>
-                    <li><a routerLink="/sgi">{{'politica.sgi' | translate }}</a></li>
-                    <li><a routerLink="/anti">{{'politica.anti' | translate }}</a></li>
-                    <li><a routerLink="/politicas-cont-negocios">{{'policies.bcm.title' | translate }}</a></li>
-            <li><a routerLink="/politicas-contrat">{{'procurement.policy.title' | translate }}</a></li>
-                        <li><a routerLink="/politicas-id-dued">{{'customer.dueDiligence.policy.title' | translate }}</a></li>
-                                            <li><a routerLink="/politicas-seginf">{{'infoSecurity.policy.title' | translate }}</a></li>
+                    <li><a> {{'termos.condicoes' | translate }}</a></li>
+                    <li class="uk-margin-small-top" >
+                        <details class="policies-accordion">
+                            <summary>> {{'ourpolicies' | translate }} </summary>
+                            <ul class="policies-submenu">
+                                <li><a href="https://angolacables.com/privacy-policies" target="_blank" rel="noopener noreferrer">Política de Privacidade</a></li>
+                                <li><a href="https://angolacables.com/cookies-policies" target="_blank" rel="noopener noreferrer">Política de Cookies</a></li>
+                                <li><a href="https://angolacables.com/sgi" target="_blank" rel="noopener noreferrer">Política do Sistema de Gestão Integrado</a></li>
+                                <li><a href="https://angolacables.com/anti" target="_blank" rel="noopener noreferrer">Política Anti-Suborno</a></li>
+                                <li><a href="https://angolacables.com/politicas-cont-negocios" target="_blank" rel="noopener noreferrer">Política de Continuidade de Negócios</a></li>
+                                <li><a href="https://angolacables.com/politicas-contrat" target="_blank" rel="noopener noreferrer">Política de Aquisição e Relacionamento com Fornecedores</a></li>
+                                <li><a href="https://angolacables.com/politicas-id-dued" target="_blank" rel="noopener noreferrer">Política de Identificação, Aceitação e Due Diligence de Clientes e Parceiros</a></li>
+                                <li><a href="https://angolacables.com/politicas-seginf" target="_blank" rel="noopener noreferrer">Política de Segurança da Informação para Fornecedores e Prestadores</a></li>
+                                <li><a routerLink="/community-lists">{{ 'communityLists.footerLink' | translate }}</a></li>
+                            </ul>
+                        </details>
+                    </li>
 
                     <li><a target="_blank" href="https://portaldenuncias.angolacables.co.ao/">{{'canal.denuncias' |
                             translate }}</a></li>

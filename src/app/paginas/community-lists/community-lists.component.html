@@ -1,0 +1,161 @@
+<app-menu></app-menu>
+
+<div class="page-hero">
+  <div class="page-hero-overlay">
+    <div class="uk-container">
+      <div class="hero-content">
+        <p class="eyebrow">{{ 'communityLists.heroEyebrow' | translate }}</p>
+        <h1>{{ 'communityLists.pageTitle' | translate }}</h1>
+        <div class="meta-row">
+          <span>{{ 'communityLists.lastUpdate' | translate }}: {{ 'communityLists.lastUpdateDate' | translate }}</span>
+          <span>{{ 'communityLists.contactLabel' | translate }}: <a href="mailto:noc&#64;angolacables.co.ao">noc&#64;angolacables.co.ao</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="uk-container page-shell">
+  <section class="intro-card">
+    <h2>{{ 'communityLists.backgroundTitle' | translate }}</h2>
+    <p>{{ 'communityLists.backgroundText1' | translate }}</p>
+    <p>{{ 'communityLists.backgroundText2' | translate }}</p>
+  </section>
+
+  <div class="contact-experts">
+    <div>
+      <p class="contact-kicker">{{ 'communityLists.contactExpertsKicker' | translate }}</p>
+      <h3>{{ 'communityLists.contactExpertsTitle' | translate }}</h3>
+    </div>
+    <a routerLink="/contacto">{{ 'communityLists.contactExpertsButton' | translate }}</a>
+  </div>
+
+  <main class="article-panel">
+    <section id="network">
+      <h2>{{ 'communityLists.networkTitle' | translate }}</h2>
+      <ul>
+        <li>{{ 'communityLists.networkItem1' | translate }}</li>
+        <li>{{ 'communityLists.networkItem2' | translate }}</li>
+        <li>{{ 'communityLists.networkItem3' | translate }}</li>
+        <li>{{ 'communityLists.networkItem4' | translate }}</li>
+        <li>{{ 'communityLists.networkItem5' | translate }}</li>
+      </ul>
+    </section>
+
+    <section id="peering">
+      <h2>{{ 'communityLists.peeringTitle' | translate }}</h2>
+      <ul>
+        <li>{{ 'communityLists.peeringItem1' | translate }}</li>
+        <li>{{ 'communityLists.peeringItem2' | translate }}</li>
+        <li>{{ 'communityLists.peeringItem3' | translate }}</li>
+        <li>{{ 'communityLists.peeringItem4' | translate }}</li>
+        <li>{{ 'communityLists.peeringItem5' | translate }}</li>
+      </ul>
+    </section>
+
+    <section id="transit">
+      <h2>{{ 'communityLists.transitTitle' | translate }}</h2>
+      <ul>
+        <li>{{ 'communityLists.transitItem1' | translate }}</li>
+        <li>{{ 'communityLists.transitItem2' | translate }}</li>
+        <li>{{ 'communityLists.transitItem3' | translate }}</li>
+        <li>{{ 'communityLists.transitItem4' | translate }}</li>
+        <li>{{ 'communityLists.transitItem5' | translate }}</li>
+        <li>{{ 'communityLists.transitItem6' | translate }}</li>
+        <li>{{ 'communityLists.transitItem7' | translate }}</li>
+      </ul>
+    </section>
+
+    <section id="communities">
+      <h2>{{ 'communityLists.communityStructureTitle' | translate }}</h2>
+      <p>{{ 'communityLists.communityStructureIntro' | translate }}</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>{{ 'communityLists.table.group' | translate }}</th>
+              <th>{{ 'communityLists.table.format' | translate }}</th>
+              <th>{{ 'communityLists.table.example' | translate }}</th>
+              <th>{{ 'communityLists.table.meaning' | translate }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{ 'communityLists.table.relationship' | translate }}</td>
+              <td>37468:R00Y</td>
+              <td>37468:1000</td>
+              <td>{{ 'communityLists.table.relationshipDesc' | translate }}</td>
+            </tr>
+            <tr>
+              <td>{{ 'communityLists.table.geoOrigin' | translate }}</td>
+              <td>37468:1CXYY</td>
+              <td>37468:11101</td>
+              <td>{{ 'communityLists.table.geoOriginDesc' | translate }}</td>
+            </tr>
+            <tr>
+              <td>{{ 'communityLists.table.ixp' | translate }}</td>
+              <td>37468:2CXY</td>
+              <td>37468:2111</td>
+              <td>{{ 'communityLists.table.ixpDesc' | translate }}</td>
+            </tr>
+            <tr>
+              <td>{{ 'communityLists.table.partner' | translate }}</td>
+              <td>37468:4CXY</td>
+              <td>37468:41111</td>
+              <td>{{ 'communityLists.table.partnerDesc' | translate }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="traffic-engineering">
+      <h2>{{ 'communityLists.trafficTitle' | translate }}</h2>
+
+      <div class="info-box">
+        <h3>{{ 'communityLists.localPrefTitle' | translate }}</h3>
+        <div class="chip-list">
+          <span>37468:50090</span>
+          <span>37468:50100</span>
+          <span>37468:50190</span>
+          <span>37468:50200</span>
+          <span>37468:50210</span>
+        </div>
+        <p>{{ 'communityLists.localPrefText' | translate }}</p>
+      </div>
+
+      <div class="info-box">
+        <h3>{{ 'communityLists.exportControlTitle' | translate }}</h3>
+        <div class="chip-list">
+          <span>0:1000</span>
+          <span>0:1211</span>
+          <span>0:2311</span>
+        </div>
+        <p>{{ 'communityLists.exportControlText' | translate }}</p>
+      </div>
+
+      <div class="info-box">
+        <h3>{{ 'communityLists.blackholeTitle' | translate }}</h3>
+        <div class="chip-list">
+          <span>37468:666</span>
+          <span>37468:6661</span>
+          <span>37468:6662</span>
+        </div>
+        <p>{{ 'communityLists.blackholeText' | translate }}</p>
+      </div>
+    </section>
+
+    <section class="summary-block">
+      <h2>{{ 'communityLists.operationalNotesTitle' | translate }}</h2>
+      <ul>
+        <li>{{ 'communityLists.operationalNote1' | translate }}</li>
+        <li>{{ 'communityLists.operationalNote2' | translate }}</li>
+        <li>{{ 'communityLists.operationalNote3' | translate }}</li>
+        <li>{{ 'communityLists.operationalNote4' | translate }}</li>
+      </ul>
+    </section>
+  </main>
+</div>
+
+<app-rodape></app-rodape>
