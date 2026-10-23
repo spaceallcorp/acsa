@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
+import { Component, inject, OnInit, OnDestroy, ChangeDetectorRef, NgZone } from '@angular/core';
 import { ActivatedRoute, RouterModule, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Subscription, BehaviorSubject, combineLatest } from 'rxjs';
@@ -31,6 +31,7 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
   private titleService = inject(Title);
   private translate = inject(TranslateService);
   private cdr = inject(ChangeDetectorRef);
+  private ngZone = inject(NgZone);
 
   private routeSub!: Subscription;
   private reloadTrigger$ = new BehaviorSubject<void>(undefined);
@@ -128,6 +129,7 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
       switchMap(([params, _]) => {
         this.isLoading = true;
         this.errorMessage = '';
+        this.cdr.detectChanges();
         const id = params.get('id');
 
         if (!id) {
@@ -140,29 +142,35 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
       })
     ).subscribe({
       next: ({ products, id }) => {
-        this.product = products.find(p => String(p.id) === id) || null;
+        this.ngZone.run(() => {
+          this.product = products.find(p => String(p.id) === id) || null;
 
-        if (!this.product) {
-          this.errorMessage = this.translate.instant('error_not_found');
+          if (!this.product) {
+            this.errorMessage = this.translate.instant('error_not_found');
+            this.isLoading = false;
+            this.cdr.detectChanges();
+            return;
+          }
+
+          this.relatedProducts = products
+            .filter(p =>
+              p.id !== this.product?.id &&
+              (p.productCategory === this.product?.productCategory ||
+                p.productSector === this.product?.productSector)
+            )
+            .slice(0, 4);
+
           this.isLoading = false;
-          return;
-        }
-
-        this.relatedProducts = products
-          .filter(p =>
-            p.id !== this.product?.id &&
-            (p.productCategory === this.product?.productCategory ||
-              p.productSector === this.product?.productSector)
-          )
-          .slice(0, 4);
-
-        this.isLoading = false;
-        this.scrollToContent();
+          this.cdr.detectChanges();
+        });
       },
       error: (error) => {
-        console.error('Error loading product:', error);
-        this.errorMessage = error.message || this.translate.instant('error_load_failed');
-        this.isLoading = false;
+        this.ngZone.run(() => {
+          console.error('Error loading product:', error);
+          this.errorMessage = error.message || this.translate.instant('error_load_failed');
+          this.isLoading = false;
+          this.cdr.detectChanges();
+        });
       }
     });
   }
