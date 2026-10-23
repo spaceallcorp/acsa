@@ -35,6 +35,8 @@ export class ProdutoCriarComponent {
   form = this.fb.group({
     name: ['', Validators.required],
     description: ['', Validators.required],
+    descriptionPT: [''],
+    descriptionFR: [''],
     metrics: this.fb.array([]), // Fixed: was incorrectly declared
     features: this.fb.array([]),
     coverUrl: [''],
@@ -106,6 +108,8 @@ export class ProdutoCriarComponent {
       id: Date.now(),
       name: formValue.name || '',
       description: formValue.description || '',
+      descriptionPT: formValue.descriptionPT || '',
+      descriptionFR: formValue.descriptionFR || '',
       metrics: (formValue.metrics || []) as ProdutoMetric[], // Fixed type
       features: (formValue.features || []) as string[],
       coverUrl: formValue.coverUrl || '',
@@ -136,7 +140,11 @@ export class ProdutoCriarComponent {
     this.form.reset({
       name: '',
       description: '',
+      descriptionPT: '',
+      descriptionFR: '',
       coverUrl: '',
+      featuredImageUrl: '',
+      productGuideUrl: '',
       ctaText: '',
       ctaUrl: '',
       productSector: '',

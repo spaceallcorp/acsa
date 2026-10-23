@@ -77,6 +77,21 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
 
   this.showTooltip(event, translatedText);
 }
+  get currentDescription(): string {
+    if (!this.product) return '';
+    const lang = (this.translate.currentLang || this.selectedLanguage || 'pt').toLowerCase();
+
+    if (lang.includes('pt') && this.product.descriptionPT) {
+      return this.product.descriptionPT;
+    }
+    if (lang.includes('fr') && this.product.descriptionFR) {
+      return this.product.descriptionFR;
+    }
+
+    // Inglês é o default (.description)
+    return this.product.description || this.product.descriptionPT || '';
+  }
+
   private updateLanguageDisplay(language: string): void {
     if (language === 'pt') {
       this.selectedFlag = 'img/bandeiras/ao.png';
@@ -92,6 +107,15 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    // Sincroniza idioma inicial e escuta mudanças vindas do MenuComponent
+    const currentLang = this.translate.currentLang || 'pt';
+    this.updateLanguageDisplay(currentLang);
+
+    this.translate.onLangChange.subscribe(event => {
+      this.updateLanguageDisplay(event.lang);
+      this.cdr.detectChanges();
+    });
+
     this.route.data.subscribe(data => {
       this.productName = data['productName'];
       this.titleService.setTitle(`${this.productName} - TelCables South Africa`);
@@ -220,11 +244,11 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
     this.tooltipText = '';
   }
 
-  navigateToProduct(id: number): void {
+  navigateToProduct(id: number | string): void {
     this.router.navigate(['/product', id]);
   }
 
-  trackByProductId(index: number, item: Produto): number {
+  trackByProductId(index: number, item: Produto): number | string {
     return item.id;
   }
 

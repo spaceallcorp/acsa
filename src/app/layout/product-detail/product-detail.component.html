@@ -11,12 +11,15 @@
   <div class="hero-content-wrapper">
     <div class="uk-container">
       <div class="hero-text animate-fade-in-up">
+      
+      <!-- 
         <div class="product-badge">
           <span class="badge-category">{{ product.productCategory }}</span>
           @if (product.productSector) {
           <span class="badge-category">{{ product.productSector | titlecase }}</span>
           }
         </div>
+        -->
         <h1 id="title" class="hero-title">{{ product.name }}</h1>
       </div>
     </div>
@@ -61,7 +64,7 @@
               <h2 class="section-title">{{ 'service_description_title' | translate }}</h2>
             </div>
             <div class="description-content">
-              <p class="description-text">{{ product.description }}</p>
+              <p class="description-text">{{ currentDescription }}</p>
             </div>
           </div>
           }

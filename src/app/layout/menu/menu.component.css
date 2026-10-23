@@ -39,7 +39,38 @@
     border-bottom-left-radius: 20px;
     padding: 25px 25px 20px 20px;
     top: 90px !important;
-   
+}
+
+.services-dropdown {
+    min-width: 780px;
+    padding: 30px 30px 25px 30px !important;
+}
+
+.services-dropdown .uk-nav-header {
+    color: #050045;
+    font-size: 0.95rem;
+    text-transform: none;
+    margin-bottom: 8px;
+}
+
+.uk-navbar-dropdown-nav > li {
+    margin: 3px 0;
+}
+
+.uk-navbar-dropdown-nav > li > a,
+.uk-navbar-dropdown-nav > li.uk-active > a {
+    color: #333 !important;
+    font-size: 14px;
+    padding: 4px 6px;
+    border-radius: 4px;
+    display: block;
+    transition: all 0.2s ease;
+}
+
+.uk-navbar-dropdown-nav > li > a:hover,
+.uk-navbar-dropdown-nav > li.uk-active > a:hover {
+    color: #050045 !important;
+    background-color: rgba(5, 0, 69, 0.05);
 }
 
 

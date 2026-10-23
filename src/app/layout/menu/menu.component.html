@@ -53,29 +53,39 @@
 
                     <li>
                         <a href="#" uk-scroll>{{ 'menu-servicos' | translate }}</a>
-                        <div class="uk-navbar-dropdown uk-navbar-dropdown-width-2">
-                            <div class="uk-drop-grid uk-child-width-1-2" uk-grid>
+                        <div id="solutions-dropdown" class="uk-navbar-dropdown services-dropdown">
+                            <div class="uk-drop-grid uk-child-width-1-3@m" uk-grid>
                                 <div>
-                                    <ul class="uk-margin-medium-left uk-nav uk-navbar-dropdown-nav">
-                                        <li class="uk-margin-small-bottom uk-active"><a
-                                                routerLink="/conectividade"><b>{{
-                                                    'menu-conectividade' | translate }}</b></a></li>
-                                        <li class="uk-margin-small-bottom uk-active"><a routerLink="/cloud"><b>{{
-                                                    'menu-cloud' | translate }}</b></a></li>
-                                        <li class="uk-margin-small-bottom uk-active"><a routerLink="/seguranca"><b>{{
-                                                    'menu-seguranca' | translate }}</b></a></li>
+                                    <ul class="uk-nav uk-navbar-dropdown-nav uk-margin-small-left uk-margin-small-right">
+                                        <li class="uk-nav-header"><b>{{ 'menu-conectividade' | translate }}</b></li>
+                                        <li class="uk-active uk-margin-small-bottom"><a routerLink="/product/ip_transit">IP Transit</a></li>
+                                        <li class="uk-active uk-margin-small-bottom"><a routerLink="/product/international_private_leased_circuit">IPLC</a></li>
+                                        <li class="uk-active uk-margin-small-bottom"><a routerLink="/product/remote_peering">Remote Peering</a></li>
+                                        <li class="uk-active uk-margin-small-bottom"><a routerLink="/product/direct_internet_access_dia">DIA</a></li>
+                                        <li class="uk-active uk-margin-small-bottom"><a routerLink="/product/global_data_center_interconnection_gdi">Metro Connect / GDI</a></li>
+                                        <li class="uk-active uk-margin-small-bottom"><a routerLink="/product/acloud_connect">ACloud Connect</a></li>
                                     </ul>
                                 </div>
+
                                 <div>
-                                    <ul class="uk-margin-medium-right uk-nav uk-navbar-dropdown-nav">
-                                        <li class="uk-margin-small-bottom uk-active"><a routerLink="/datacenter"><b>{{
-                                                    'menu-datacenter' | translate }}</b></a></li>
-                                        <li class="uk-margin-small-bottom uk-active"><a
-                                                routerLink="/virtualizacao"><b>{{
-                                                    'menu-virtual' | translate }}</b></a></li>
-                                        <li class="uk-margin-small-bottom uk-active"><a routerLink="/erp"><b>{{
-                                                    'menu-erp' |
-                                                    translate }}</b></a></li>
+                                    <ul class="uk-nav uk-navbar-dropdown-nav uk-margin-small-left uk-margin-small-right">
+                                        <li class="uk-nav-header"><b>{{ 'menu-cloud' | translate }}</b></li>
+                                        <li class="uk-active uk-margin-small-bottom"><a routerLink="/product/clouds2africa">Clouds2Africa</a></li>
+                                        <li class="uk-active uk-margin-small-bottom"><a routerLink="/product/backup2africa">Backup2Africa</a></li>
+                                        <li class="uk-active uk-margin-small-bottom"><a routerLink="/product/managed_kubernetes">Managed Kubernetes</a></li>
+                                        <li class="uk-active uk-margin-small-bottom"><a routerLink="/product/storage-as-a-service">Storage-as-a-Service</a></li>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <ul class="uk-nav uk-navbar-dropdown-nav uk-margin-small-left uk-margin-small-right">
+                                        <li class="uk-nav-header"><b>{{ 'menu-seguranca' | translate }} & {{ 'menu-datacenter' | translate }}</b></li>
+                                        <li class="uk-active uk-margin-small-bottom"><a routerLink="/product/cleanpipe_-_anti-ddos">Clean Pipe - Anti-DDoS</a></li>
+                                        <li class="uk-active uk-margin-small-bottom"><a routerLink="/product/origin_protection_-_anti-ddos">Origin Protection</a></li>
+                                        <li class="uk-active uk-margin-small-bottom"><a routerLink="/product/application_protection_service">Application Protection</a></li>
+                                        <li class="uk-active uk-margin-small-bottom"><a routerLink="/product/dns_protection_service">DNS Protection</a></li>
+                                        <li class="uk-active uk-margin-small-bottom uk-margin-small-top"><a routerLink="/product/colocation">Co-Location</a></li>
+                                        <li class="uk-active uk-margin-small-bottom"><a routerLink="/product/managed_services">Managed Services</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -293,16 +303,34 @@
             <li><a routerLink="/recrutamento">{{ 'menu-recrutamento' | translate }}</a></li>
             <li><a target="_blank" href="https://talents-seedz.ao/">{{ 'menu-talent' | translate }}</a></li>
 
+            <!-- Services Dropdown/Submenu -->
             <li class="uk-parent uk-margin-top">
-                <a style="color:#ffffff85 !important; font-weight: normal !important;" href="#"> {{ 'servicos' |
-                    translate }} </a>
+                <a href="#">{{ 'menu-servicos' | translate }} <span uk-nav-parent-icon></span></a>
                 <ul class="uk-nav-sub">
-                    <li><a routerLink="/conectividade">{{ 'menu-conectividade' | translate }}</a></li>
-                    <li><a routerLink="/cloud">{{ 'menu-cloud' | translate }}</a></li>
-                    <li><a routerLink="/seguranca">{{ 'menu-seguranca' | translate }}</a></li>
-                    <li><a routerLink="/datacenter">{{ 'menu-datacenter' | translate }}</a></li>
-                    <li><a routerLink="/virtualizacao">{{ 'menu-virtual' | translate }}</a></li>
-                    <li><a routerLink="/erp">{{ 'menu-erp' | translate }}</a></li>
+                    <!-- Connectivity -->
+                    <li class="uk-nav-header"><b>{{ 'menu-conectividade' | translate }}</b></li>
+                    <li><a routerLink="/product/ip_transit">> IP Transit</a></li>
+                    <li><a routerLink="/product/international_private_leased_circuit">> IPLC</a></li>
+                    <li><a routerLink="/product/remote_peering">> Remote Peering</a></li>
+                    <li><a routerLink="/product/direct_internet_access_dia">> DIA</a></li>
+                    <li><a routerLink="/product/global_data_center_interconnection_gdi">> Metro Connect / GDI</a></li>
+                    <li><a routerLink="/product/acloud_connect">> ACloud Connect</a></li>
+
+                    <!-- Cloud Services -->
+                    <li class="uk-nav-header uk-margin-small-top"><b>{{ 'menu-cloud' | translate }}</b></li>
+                    <li><a routerLink="/product/clouds2africa">> Clouds2Africa</a></li>
+                    <li><a routerLink="/product/backup2africa">> Backup2Africa</a></li>
+                    <li><a routerLink="/product/managed_kubernetes">> Managed Kubernetes</a></li>
+                    <li><a routerLink="/product/storage-as-a-service">> Storage-as-a-Service</a></li>
+
+                    <!-- Security & Data Center -->
+                    <li class="uk-nav-header uk-margin-small-top"><b>{{ 'menu-seguranca' | translate }} & {{ 'menu-datacenter' | translate }}</b></li>
+                    <li><a routerLink="/product/cleanpipe_-_anti-ddos">> Clean Pipe - Anti-DDoS</a></li>
+                    <li><a routerLink="/product/origin_protection_-_anti-ddos">> Origin Protection</a></li>
+                    <li><a routerLink="/product/application_protection_service">> Application Protection</a></li>
+                    <li><a routerLink="/product/dns_protection_service">> DNS Protection</a></li>
+                    <li><a routerLink="/product/colocation">> Co-Location</a></li>
+                    <li><a routerLink="/product/managed_services">> Managed Services</a></li>
                 </ul>
             </li>
 

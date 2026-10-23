@@ -12,44 +12,64 @@
     <form [formGroup]="form" (ngSubmit)="submit()">
 
 
-      <div class="uk-grid uk-child-width-1-2@m uk-grid-match-height " uk-grid>
-
+      <div class="uk-grid uk-child-width-1-3@m" uk-grid>
 
         <!-- PRODUCT NAME -->
         <div class="uk-margin-top uk-text-left">
-          <label class="uk-form-label"></label>
-          <div class="uk-form-controls">
-            <input type="text" formControlName="name" class="uk-input uk-border-rounded " placeholder="Product name" />
-          </div>
-
-          <!-- CTA TEXT -->
-          <div class="uk-margin-top uk-text-left">
-            <label class="uk-form-label"></label>
-            <div class="uk-form-controls">
-              <input type="text" formControlName="ctaText" class="uk-input uk-border-rounded "
-                placeholder="Call-to-action" />
-            </div>
-          </div>
-
-          <!-- CTA URL -->
-          <div class="uk-margin-top uk-text-left">
-            <label class="uk-form-label"></label>
-            <div class="uk-form-controls">
-              <input type="url" formControlName="ctaUrl" class="uk-input uk-border-rounded " placeholder="CTA URL" />
-            </div>
+          <label class="uk-form-label"><b>Product Name</b> *</label>
+          <div class="uk-form-controls uk-margin-small-top">
+            <input type="text" formControlName="name" class="uk-input uk-border-rounded" placeholder="Product name" />
           </div>
         </div>
 
-        <!-- DESCRIPTION -->
+        <!-- CTA TEXT -->
         <div class="uk-margin-top uk-text-left">
-          <label class="uk-form-label"></label>
-          <div class="uk-form-controls">
-            <textarea formControlName="description" class="uk-textarea  uk-border-rounded " rows="6"
-              placeholder="Product Description">
-        </textarea>
+          <label class="uk-form-label"><b>Call-to-action Text</b></label>
+          <div class="uk-form-controls uk-margin-small-top">
+            <input type="text" formControlName="ctaText" class="uk-input uk-border-rounded"
+              placeholder="Ex: Saiba mais" />
           </div>
         </div>
 
+        <!-- CTA URL -->
+        <div class="uk-margin-top uk-text-left">
+          <label class="uk-form-label"><b>CTA URL</b></label>
+          <div class="uk-form-controls uk-margin-small-top">
+            <input type="url" formControlName="ctaUrl" class="uk-input uk-border-rounded" placeholder="https://..." />
+          </div>
+        </div>
+
+      </div>
+
+      <!-- MULTI-LANGUAGE DESCRIPTIONS -->
+      <div class="uk-grid uk-child-width-1-3@m uk-margin-top" uk-grid>
+
+        <!-- DESCRIPTION EN (DEFAULT) -->
+        <div class="uk-text-left">
+          <label class="uk-form-label"><b>Description (EN - Default)</b> *</label>
+          <div class="uk-form-controls uk-margin-small-top">
+            <textarea formControlName="description" class="uk-textarea uk-border-rounded" rows="6"
+              placeholder="Product description in English (default)"></textarea>
+          </div>
+        </div>
+
+        <!-- DESCRIPTION PT -->
+        <div class="uk-text-left">
+          <label class="uk-form-label"><b>Description (PT)</b></label>
+          <div class="uk-form-controls uk-margin-small-top">
+            <textarea formControlName="descriptionPT" class="uk-textarea uk-border-rounded" rows="6"
+              placeholder="Descrição do produto em Português"></textarea>
+          </div>
+        </div>
+
+        <!-- DESCRIPTION FR -->
+        <div class="uk-text-left">
+          <label class="uk-form-label"><b>Description (FR)</b></label>
+          <div class="uk-form-controls uk-margin-small-top">
+            <textarea formControlName="descriptionFR" class="uk-textarea uk-border-rounded" rows="6"
+              placeholder="Description du produit en Français"></textarea>
+          </div>
+        </div>
 
       </div>
 

@@ -22,8 +22,24 @@ export class ProductService {
   /** LISTAR TODOS OS PRODUTOS */
   getProducts(): Observable<Produto[]> {
     return collectionData(this.productsCollection, { idField: 'id' }).pipe(
-      map(products => products as Produto[])
+      map(products =>
+        products.map(doc => {
+          const data = doc as any;
+          return {
+            ...data,
+            description: data.description ?? '',
+            descriptionPT: data.descriptionPT ?? data.descriptionPt ?? data.description_pt ?? '',
+            descriptionFR: data.descriptionFR ?? data.descriptionFr ?? data.description_fr ?? data.productdescriptionFR ?? ''
+          } as Produto;
+        })
+      )
     );
+  }
+
+  /** ATUALIZAR / SALVAR PRODUTO */
+  async updateProduct(id: string, partial: Partial<Produto>): Promise<void> {
+    const productDocRef = doc(this.firestore, `productsGlobal/${id}`);
+    await setDoc(productDocRef, partial, { merge: true });
   }
 
   /** CRIAR PRODUTO */

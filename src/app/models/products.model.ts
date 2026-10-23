@@ -4,9 +4,11 @@ export interface ProdutoMetric {
 }
 
 export interface Produto {
-  id: number;
+  id: number | string;
   name: string;
   description: string;
+  descriptionPT?: string;
+  descriptionFR?: string;
 
   metrics: ProdutoMetric[];
 
