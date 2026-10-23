@@ -121,6 +121,20 @@ export const routes: Routes = [
   },
 
   
+  // Produtos (rota com parâmetro)
+  {
+    path: 'product/:id',
+    component: ProductDetailComponent,
+
+    resolve: {
+      productName: productResolver
+    },
+
+    title: 'Produtos - TelCables South Africa'
+  
+
+
+  },
     {
     path: 'politicas-id-dued',
 

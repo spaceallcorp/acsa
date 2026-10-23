@@ -11,12 +11,34 @@
 
 .ad-headline {
     color: #7cdaff;
-    font-size: 2rem;
+    font-size: clamp(1.1rem, 2.2vw, 1.6rem);
+    line-height: 1.25;
+    margin-bottom: 0;
     text-shadow: #000000 2px 0 20px;
 }
 
+.slide-overlay {
+    background: linear-gradient(90deg, rgba(2, 0, 38, 0.78) 0%, rgba(2, 0, 38, 0.45) 55%, rgba(2, 0, 38, 0.15) 100%);
+    border-radius: 20px;
+}
+
+.slide-content {
+    width: 100%;
+    max-width: 680px;
+    padding: 24px 48px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.slide-headline-wrapper {
+    max-width: 85%;
+}
+
 .rounded-img {
-    border-radius: 20px 20px;
+    border-radius: 20px;
 }
 
 
@@ -468,8 +490,12 @@
 
 
 .featured-service-logo {
-    height: 250px;
-    width: 250px;
+    width: 170px !important;
+    height: 64px !important;
+    object-fit: contain !important;
+    object-position: left center !important;
+    display: block;
+    flex-shrink: 0;
 }
 
 .service-desc {
@@ -607,40 +633,59 @@
     }
 
     .featured-service-logo {
-        height: 100px;
-        width: auto;
+        width: 170px !important;
+        height: 64px !important;
     }
-
 
 }
 
 /* Medium screens (tablets, 768px to 1199px) */
 @media (max-width: 1199px) and (min-width: 768px) {
 
+    .slide-content {
+        padding: 20px 36px;
+        max-width: 85%;
+    }
+
+    .slide-headline-wrapper {
+        max-width: 90%;
+    }
+
     .ad-headline {
-        font-size: 1.2rem !important;
+        font-size: 1.3rem !important;
     }
 
     .featured-service-logo {
-        height: auto;
-        width: auto;
+        width: 150px !important;
+        height: 56px !important;
     }
-
-
 
 }
 
 
 /* Small screens (phones, 767px and below) */
 @media (max-width: 767px) {
+    .slide-content {
+        padding: 16px 24px;
+        max-width: 100%;
+    }
+
+    .slide-headline-wrapper {
+        max-width: 100%;
+    }
+
     .featured-service-logo {
-        height: auto;
-        width: auto;
-        object-fit: contain;
+        width: 135px !important;
+        height: 50px !important;
     }
 
     .ad-headline {
-        font-size: 1.2rem !important;
+        font-size: 1.15rem !important;
+    }
+
+    .cta-button {
+        padding: 8px 18px;
+        font-size: 0.9rem;
     }
 
 
@@ -686,28 +731,31 @@
 
 /* Extra small screens (phones, 480px and below) */
 @media (max-width: 480px) {
-.featured-service-logo {
-    height: 100px;
-    width: auto;
-    object-fit: contain;
-}
-
-    .ad-headline {
-        font-size: 1.2rem !important;
+    .slide-content {
+        padding: 14px 20px;
     }
 
+    .featured-service-logo {
+        width: 120px !important;
+        height: 44px !important;
+    }
 
+    .ad-headline {
+        font-size: 1.05rem !important;
+    }
 
-
+    .cta-button {
+        padding: 7px 16px;
+        font-size: 0.85rem;
+    }
 }
 
 /* Specific adjustments for the language dropdown */
 @media (max-width: 400px) {
-.featured-service-logo {
-    height: 100px;
-    width: auto;
-    object-fit: contain;
-}
+    .featured-service-logo {
+        width: 110px !important;
+        height: 40px !important;
+    }
 
     .tab-nav-wrapper {
         /* Allows the container to scroll horizontally if tabs overflow 400px */
@@ -749,58 +797,21 @@
 }
 
 
-@media (max-width: 350px) {
-    .ad-headline {
-        font-size: 1.2rem !important;
-    }
-
-.tab-nav-wrapper {
-        /* Allows the container to scroll horizontally if tabs overflow 400px */
-        overflow-x: auto;
-        justify-content: center;
-        /* Aligns to left so scrolling feels natural */
-        padding: 0 0;
-        /* Hides scrollbars for a cleaner look on mobile */
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-        /* Firefox */
-    }
-
-    .tab-nav-wrapper::-webkit-scrollbar {
-        display: none;
-        /* Safari and Chrome */
-    }
-
-    .custom-tech-tabs {
-        gap: 3px;
-        /* Halved the spacing between tabs */
-        padding: 4px 4px;
-        /* Shrunk the outer wrapper padding */
-        border-radius: 20px;
-        /* Adjusted radius for smaller scale */
-        display: inline-flex;
-        margin: 0 auto;
-        /* Keeps it centered if it doesn't overflow */
-    }
-
-    .custom-tech-tabs li a {
-        padding: 8px 16px;
-        /* Significantly reduced padding for tighter fit */
-        font-size: 0.85rem;
-        /* Slightly smaller text for readability on mobile */
-        border-radius: 16px;
-        /* Adjusted radius */
-    }
-
-}
-
-
 @media (max-width: 360px) {
-    .ad-headline {
-        font-size: 1.2rem !important;
+    .slide-content {
+        padding: 12px 16px;
     }
 
-.tab-nav-wrapper {
+    .featured-service-logo {
+        width: 100px !important;
+        height: 38px !important;
+    }
+
+    .ad-headline {
+        font-size: 0.98rem !important;
+    }
+
+    .tab-nav-wrapper {
         /* Allows the container to scroll horizontally if tabs overflow 400px */
         overflow-x: auto;
         justify-content: center;
@@ -820,13 +831,12 @@
     .custom-tech-tabs {
         gap: 4px;
         /* Halved the spacing between tabs */
-        padding: 4px ;
+        padding: 4px;
         /* Shrunk the outer wrapper padding */
         border-radius: 20px;
         /* Adjusted radius for smaller scale */
         display: inline-flex;
         /* Keeps it centered if it doesn't overflow */
-
     }
 
     .custom-tech-tabs li a {
@@ -837,15 +847,11 @@
         border-radius: 16px;
         /* Adjusted radius */
     }
-
 }
-
-
-
 
 @media (max-width: 344px) {
     .ad-headline {
-        font-size: 1.2rem !important;
+        font-size: 0.95rem !important;
     }
 
 .tab-nav-wrapper {
