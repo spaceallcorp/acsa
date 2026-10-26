@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RodapeComponent } from '../../layout/rodape/rodape.component';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { MenuComponent } from '../../layout/menu/menu.component';
+import { CookieConsentService } from '../../services/cookie-consent.service';
 
 @Component({
   selector: 'app-politicas-cookies',
@@ -10,10 +11,15 @@ import { MenuComponent } from '../../layout/menu/menu.component';
   styleUrl: './politicas-cookies.component.css',
 })
 export class PoliticasCookiesComponent {
+  private cookieConsent = inject(CookieConsentService);
   cookiesUpdatedDate = '2025-01-15'; // January is 0, so this represents January 15, 2025
 
   useLanguage(language: string): void {
     this.translate.use(language);
+  }
+
+  openCookieSettings(): void {
+    this.cookieConsent.openPreferences();
   }
 
   constructor(private translate: TranslateService) {}

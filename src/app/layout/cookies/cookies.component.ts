@@ -1,69 +1,66 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { Component, inject, HostListener, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule, FormControl, FormsModule } from '@angular/forms';
-import { CookieService } from 'ngx-cookie-service';
+import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import { TranslatePipe } from '@ngx-translate/core';
+import { CookieConsentService, CookiePreferences } from '../../services/cookie-consent.service';
 
 @Component({
   selector: 'app-cookies',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, FormsModule, RouterLink ],
-  providers: [CookieService],
+  imports: [CommonModule, FormsModule, RouterLink, TranslatePipe],
   templateUrl: './cookies.component.html',
   styleUrl: './cookies.component.css'
 })
-export class CookiesComponent implements OnInit {
-  public cookieService = inject(CookieService);
-  
-  mostrarBanner = signal(false);
-  mostrarModalAjustes = signal(false);
-  cookieInput = new FormControl('');
+export class CookiesComponent {
+  public consentService = inject(CookieConsentService);
 
-  // Preferências do usuário
-  prefs = {
-    essenciais: true, // Sempre verdadeiro
-    marketing: false,
-    analiticos: false
-  };
+  // Cópia temporária para edição no modal
+  public tempPrefs: CookiePreferences = { ...this.consentService.preferences() };
 
-  ngOnInit() {
-    if (!this.cookieService.check('cookie-consent')) {
-      this.mostrarBanner.set(true);
+  // Controla acordeão de detalhes por categoria
+  public expandedCategory = signal<string | null>(null);
+
+  @HostListener('window:keydown.escape')
+  public onEscape(): void {
+    if (this.consentService.showModal()) {
+      this.fecharAjustes();
     }
   }
 
-  aceitarTudo() {
-    this.prefs.marketing = true;
-    this.prefs.analiticos = true;
-    this.salvarPreferencias();
+  public aceitarTudo(): void {
+    this.consentService.acceptAll();
   }
 
-  rejeitarTudo() {
-    this.prefs.marketing = false;
-    this.prefs.analiticos = false;
-    this.salvarPreferencias();
+  public rejeitarTudo(): void {
+    this.consentService.rejectAll();
   }
 
-  abrirAjustes() {
-    this.mostrarModalAjustes.set(true);
+  public abrirAjustes(): void {
+    // Sincroniza com as preferências atuais salvas
+    this.tempPrefs = { ...this.consentService.preferences() };
+    this.consentService.openPreferences();
   }
 
-  fecharAjustes() {
-    this.mostrarModalAjustes.set(false);
+  public fecharAjustes(): void {
+    this.consentService.closePreferences();
   }
 
-  salvarPreferencias() {
-    const consentObj = JSON.stringify(this.prefs);
-    this.cookieService.set('cookie-consent', consentObj, 365, '/');
-    this.mostrarBanner.set(false);
-    this.mostrarModalAjustes.set(false);
+  public salvarPreferencias(): void {
+    this.consentService.savePreferences(this.tempPrefs);
   }
 
-  // Métodos do seu Demo original
-  setCookie() {
-    this.cookieService.set('X-Auth-Token', this.cookieInput.value || '', 7, '/');
+  public toggleCategoria(categoria: string): void {
+    if (this.expandedCategory() === categoria) {
+      this.expandedCategory.set(null);
+    } else {
+      this.expandedCategory.set(categoria);
+    }
   }
-  deleteCookie() {
-    this.cookieService.delete('X-Auth-Token', '/');
+
+  public onBackdropClick(event: MouseEvent): void {
+    if ((event.target as HTMLElement).classList.contains('cookie-modal-overlay')) {
+      this.fecharAjustes();
+    }
   }
 }

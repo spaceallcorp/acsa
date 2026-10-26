@@ -38,8 +38,9 @@
                         <details class="policies-accordion">
                             <summary>> {{'ourpolicies' | translate }} </summary>
                             <ul class="policies-submenu">
-                                <li><a href="https://angolacables.com/privacy-policies" target="_blank" rel="noopener noreferrer">Política de Privacidade</a></li>
-                                <li><a href="https://angolacables.com/cookies-policies" target="_blank" rel="noopener noreferrer">Política de Cookies</a></li>
+                                <li><a routerLink="/privacy-policies">Política de Privacidade</a></li>
+                                <li><a routerLink="/cookies-policies">Política de Cookies</a></li>
+                                <li><button type="button" class="cookie-footer-btn" (click)="openCookieSettings()">{{ 'cookies.manage_cookies' | translate }}</button></li>
                                 <li><a href="https://angolacables.com/sgi" target="_blank" rel="noopener noreferrer">Política do Sistema de Gestão Integrado</a></li>
                                 <li><a href="https://angolacables.com/anti" target="_blank" rel="noopener noreferrer">Política Anti-Suborno</a></li>
                                 <li><a href="https://angolacables.com/politicas-cont-negocios" target="_blank" rel="noopener noreferrer">Política de Continuidade de Negócios</a></li>

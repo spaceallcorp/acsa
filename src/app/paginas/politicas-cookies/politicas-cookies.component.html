@@ -61,6 +61,14 @@
         <h2><span class="section-number">6</span> {{ 'policies.cookies.management.title' | translate }}</h2>
         <p>{{ 'policies.cookies.management.p1' | translate }}</p>
 
+        <div class="cookie-manage-card uk-card uk-card-default uk-card-body uk-border-rounded uk-margin">
+            <h4 style="margin: 0 0 8px; font-weight: 700; color: #020026;">{{ 'cookies.manage_cookies' | translate }}</h4>
+            <p style="margin: 0 0 16px; font-size: 0.95rem;">{{ 'cookies.manage_cookies_desc' | translate }}</p>
+            <button type="button" class="btn btn-primary" (click)="openCookieSettings()">
+                {{ 'cookies.customize' | translate }}
+            </button>
+        </div>
+
         <h3>{{ 'policies.cookies.management.browser.title' | translate }}</h3>
         <ul>
             <li>{{ 'policies.cookies.management.browser.view' | translate }}</li>
