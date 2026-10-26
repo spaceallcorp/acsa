@@ -115,7 +115,6 @@
   "servicos": "Services",
   "empresa": "Entreprise",
   "conectividade": "Connectivité",
-  
   "ip": "IP",
   "datacenter": "Centre de Données",
   "tic": "TIC",
@@ -172,7 +171,7 @@
   "equipa.dir.tec": "Directeur Technique",
   "equipa.dir.Inov.Dig": "VP Digital​",
   "equipa.vp.sal": "VP Ventes",
-    "equipa.arlindo.name": "ARLINDO ALVES",
+  "equipa.arlindo.name": "ARLINDO ALVES",
   "equipa.arlindo.position": "VP Corporate ",
   "equipa.lid.eng": "Responsable Ingénierie​",
   "equipa.lid.Mark": "Responsable Marketing",
@@ -695,8 +694,6 @@
   "policies_bcm_principles_l": "Garantir, dès la phase initiale, que les exigences de Continuité des Activités sont correctement prises en compte dans tous les projets pertinents et impactants pour AC ;",
   "policies_bcm_principles_m": "Garantir que le SGCA prend en compte les exigences de Continuité de la Sécurité de l’Information ;",
   "policies_bcm_principles_n": "Promouvoir le respect des exigences légales et réglementaires en matière de Continuité des Activités.",
-
-
   "procurement.policy.title": "Politique d'Achat et de Relation Fournisseurs",
   "procurement.objective.title": "1. Objectif",
   "procurement.objective.paragraph1": "La présente politique a pour objectif d'établir les principes, directives, responsabilités et procédures applicables à l'acquisition de biens et à la contracting de services, en établissant la réglementation de son processus d'exécution et en assurant, simultanément, les exigences de compétitivité, qualité, sécurité, responsabilité socio-environnementale des biens acquis et l'amélioration continue de la relation avec les fournisseurs et prestataires de l'AC.",
@@ -722,8 +719,6 @@
   "procurement.communicationChannel.title": "4. Canal de communication",
   "procurement.communicationChannel.paragraph1": "Dans ce cadre, il est essentiel que toute personne, qu'il s'agisse d'un employé, d'un fournisseur ou d'un prestataire, signale tout acte ou suspicion de non-conformité avec cette Politique, afin de prévenir les actes de fraude, de corruption et de préserver l'image de l'AC.",
   "procurement.communicationChannel.paragraph2": "La communication des irrégularités peut être effectuée par écrit et présentée via le canal suivant: https://portal-de-denuncias.vercel.app/ ou par courrier électronique denuncias@angolacables.com",
-
-  
   "customer.dueDiligence.policy.title": "Politique d'Identification, d'Acceptation et de Due Diligence des Clients et Partenaires",
   "customer.dueDiligence.objective.title": "1. Objectif",
   "customer.dueDiligence.objective.paragraph1": "La présente politique fait partie intégrante du système de contrôle interne et de gestion des risques d'Angola Cables (AC), s'alignant sur les meilleures pratiques du Programme de Prévention et de Lutte contre le Blanchiment de Capitaux, le Financement du Terrorisme et la Prolifération des Armes de Destruction Massive (PC-BC/FTP), ainsi qu'avec les principes et règles établis dans le cadre de la Politique Anti-Corruption.",
@@ -732,9 +727,6 @@
   "customer.dueDiligence.scope.paragraph1": "Dans le cadre des activités d'AC, l'application de cette politique vise non seulement à atténuer les risques associés au blanchiment de capitaux et au financement du terrorisme, mais aussi à prévenir l'exposition aux risques de corruption, de fraude, de conflits d'intérêts et d'autres pratiques susceptibles de compromettre la légalité, la réputation et la durabilité des relations d'affaires établies.",
   "customer.dueDiligence.scope.paragraph2": "À cette fin, des mécanismes de due diligence proportionnés au risque sont définis, permettant d'évaluer la probité des clients, de comprendre la nature de leur activité, l'origine des fonds et le cadre des relations commerciales, en veillant à ce qu'ils soient compatibles avec les exigences légales, réglementaires et internes applicables.",
   "customer.dueDiligence.scope.paragraph3": "Cette politique s'applique à tous les employés, membres des organes de gouvernance et toutes les unités organisationnelles d'AC, et est obligatoire dans le cadre de l'établissement, du maintien et de la révision de toute relation d'affaires, quel que soit le canal, la géographie ou la nature des services fournis.",
-
-
-
   "infoSecurity.policy.title": "Politique de Sécurité de l'Information pour les Fournisseurs et Prestataires",
   "infoSecurity.objective.title": "1. Objectif",
   "infoSecurity.objective.paragraph1": "La présente Politique établit les principes, règles et responsabilités applicables à la Sécurité de l'Information dans le cadre des relations entre l'AC et ses fournisseurs et prestataires de services, assurant la protection adéquate des actifs informationnels, des données personnelles et des informations commerciales.",
@@ -759,7 +751,6 @@
   "infoSecurity.scope.item10": "Informations classifiées;",
   "infoSecurity.scope.item11": "Systèmes d'information;",
   "infoSecurity.scope.item12": "Infrastructures technologiques.",
-  
   "ai": "IA",
   "gpu.npu": "GPUs & NPUs À LA DEMANDE",
   "international.connectivity": "IP TRANSIT, IPLC, PEERING À DISTANCE ...",
@@ -806,7 +797,6 @@
   "web-hosting.desc": "Hébergement Web avec haute disponibilité et évolutivité. Hébergez vos projets web et vos e-mails en toute sécurité.",
   "kubernetes": "KUBERNETES",
   "kubernetes.desc": "Gérez vos clusters Kubernetes à l'aide d'un tableau de bord riche et intuitif, en tirant parti de notre infrastructure distribuée.",
-
   "hero_bg_aria_label": "Image de fond du produit",
   "loading_text": "Chargement des détails du produit...",
   "error_title_message": "Oups ! Un problema est survenu.",
@@ -816,7 +806,7 @@
   "featured_img_aria_label": "Image en vedette du produit",
   "big_numbers_title": "Chiffres Clés",
   "value_of": "Valeur de",
-  "metric_of": "Métrique de",
+  "metric_of": "Métrique de {{title}} : {{value}}",
   "main_features_title": "Caractéristiques Principales",
   "cta_title": "Prêt à faire passer votre entreprise au niveau supérieur ?",
   "cta_subtitle": "Commencez dès maintenant avec",
@@ -831,10 +821,18 @@
   "sec_title": "Protection contre les attaques DDoS",
   "sec_desc": "Service de test de pénétration DDoS. Contactez-nous à Sales.ACSA@angolacables.co.ao",
   "get_started": "Parlez-nous",
-    "ourpolicies": "Nos Politiques"
-
-
-  
-
-
+  "ourpolicies": "Nos Politiques",
+  "error_not_found": "Produit non trouvé",
+  "error_load_failed": "Échec du chargement du produit",
+  "product_fallback": "Produit",
+  "share_product_text": "Découvrez {{name}} - {{description}}",
+  "link_copied_success": "Lien copié avec succès !",
+  "link_copied_error": "Erreur lors de la copie du lien.",
+  "trend_exceptional": "Croissance exceptionnelle",
+  "trend_accelerated": "Croissance accélérée",
+  "trend_excellent": "Excellent",
+  "trend_good": "Bon",
+  "trend_positive": "Positif",
+  "trend_developing": "En développement",
+  "not_available": "N/D"
 }

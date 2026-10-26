@@ -82,15 +82,21 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
     if (!this.product) return '';
     const lang = (this.translate.currentLang || this.selectedLanguage || 'pt').toLowerCase();
 
+    let desc = '';
     if (lang.includes('pt') && this.product.descriptionPT) {
-      return this.product.descriptionPT;
-    }
-    if (lang.includes('fr') && this.product.descriptionFR) {
-      return this.product.descriptionFR;
+      desc = this.product.descriptionPT;
+    } else if (lang.includes('fr') && this.product.descriptionFR) {
+      desc = this.product.descriptionFR;
+    } else {
+      desc = this.product.description || this.product.descriptionPT || '';
     }
 
-    // Inglês é o default (.description)
-    return this.product.description || this.product.descriptionPT || '';
+    return this.formatText(desc);
+  }
+
+  formatText(text?: string): string {
+    if (!text) return '';
+    return text.replace(/\\n/g, '\n');
   }
 
   private updateLanguageDisplay(language: string): void {
@@ -119,7 +125,7 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
 
     this.route.data.subscribe(data => {
       this.productName = data['productName'];
-      this.titleService.setTitle(`${this.productName} - TelCables South Africa`);
+      this.titleService.setTitle(`${this.productName} - Angola Cables`);
     });
 
     this.routeSub = combineLatest([
@@ -187,10 +193,10 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
 
   formatBigNumber(value?: string, title?: string): string {
     if (!value) {
-      return 'N/A';
+      return this.translate.instant('not_available');
     }
     const titleLower = title?.toLowerCase() || '';
-    if ((titleLower.includes('percent') || titleLower.includes('%') || titleLower.includes('taxa') || titleLower.includes('uptime')) && !value.includes('%')) {
+    if ((titleLower.includes('percent') || titleLower.includes('%') || titleLower.includes('taxa') || titleLower.includes('uptime') || titleLower.includes('rate') || titleLower.includes('taux')) && !value.includes('%')) {
       return `${value}%`;
     }
     return value;
@@ -200,12 +206,25 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
     const iconMap: { [key: string]: string } = {
       'clientes': '👥',
       'usuários': '👤',
+      'usuarios': '👤',
+      'utilisateurs': '👤',
+      'clients': '👥',
+      'customers': '👥',
+      'users': '👤',
       'vendas': '💰',
+      'sales': '💰',
+      'ventes': '💰',
       'receita': '💵',
+      'revenue': '💵',
+      'revenu': '💵',
       'uptime': '⏱️',
       'disponibilidade': '🟢',
+      'availability': '🟢',
+      'disponibilité': '🟢',
       'performance': '⚡',
-      'escalabilidade': '📊'
+      'escalabilidade': '📊',
+      'scalability': '📊',
+      'évolutivité': '📊'
     };
 
     const titleLower = title.toLowerCase();
@@ -270,19 +289,21 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
 
   shareOnFacebook(): void {
     const url = encodeURIComponent(window.location.href);
-    const title = encodeURIComponent(this.product?.name || 'Produto');
+    const title = encodeURIComponent(this.product?.name || this.translate.instant('product_fallback'));
     window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}&title=${title}`, '_blank');
   }
 
   shareOnTwitter(): void {
     const url = encodeURIComponent(window.location.href);
-    const text = encodeURIComponent(`Confira ${this.product?.name} - ${this.product?.description?.substring(0, 100)}`);
+    const productName = this.product?.name || this.translate.instant('product_fallback');
+    const description = this.currentDescription ? this.currentDescription.substring(0, 100) : '';
+    const text = encodeURIComponent(this.translate.instant('share_product_text', { name: productName, description }));
     window.open(`https://twitter.com/intent/tweet?url=${url}&text=${text}`, '_blank');
   }
 
   shareOnLinkedIn(): void {
     const url = encodeURIComponent(window.location.href);
-    const title = encodeURIComponent(this.product?.name || 'Produto');
+    const title = encodeURIComponent(this.product?.name || this.translate.instant('product_fallback'));
     window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}&title=${title}`, '_blank');
   }
 

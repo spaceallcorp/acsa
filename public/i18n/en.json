@@ -692,10 +692,6 @@
   "policies_bcm_principles_l": "Ensure, from the initial stage, that Business Continuity considerations are properly addressed in all relevant and impactful projects for AC;",
   "policies_bcm_principles_m": "Ensure that the BCMS addresses Information Security Continuity requirements;",
   "policies_bcm_principles_n": "Promote compliance with legal and regulatory requirements related to Business Continuity.",
-
-
-
-  
   "procurement.policy.title": "Procurement and Supplier Relationship Policy",
   "procurement.objective.title": "1. Objective",
   "procurement.objective.paragraph1": "This policy aims to establish the principles, guidelines, responsibilities and procedures applicable to the acquisition of goods and contracting of services, setting forth the regulations for its execution process while ensuring requirements of competitiveness, quality, safety, socio-environmental responsibility of acquired goods and the continuous improvement of the relationship with AC's suppliers and service providers.",
@@ -721,9 +717,6 @@
   "procurement.communicationChannel.title": "4. Communication Channel",
   "procurement.communicationChannel.paragraph1": "In this context, it is essential that any person, whether employee, supplier or service provider, reports any acts or suspicions of non-compliance with this Policy, preventing acts of fraud and corruption and preserving AC's image.",
   "procurement.communicationChannel.paragraph2": "Irregularities may be reported in writing and submitted through the following channel: https://portal-de-denuncias.vercel.app/ or by email denuncias@angolacables.com",
-
-  
- 
   "customer.dueDiligence.policy.title": "Policy on the Identification, Acceptance and Due Diligence of Customers and Partners",
   "customer.dueDiligence.objective.title": "1. Objective",
   "customer.dueDiligence.objective.paragraph1": "This policy forms part of Angola Cables' (AC) internal control and risk management system, aligning with the best practices of the Programme for the Prevention and Combating of Money Laundering, Terrorist Financing and the Proliferation of Weapons of Mass Destruction (PC-BC/FTP), as well as with the principles and rules established under the Anti-Bribery Policy.",
@@ -732,9 +725,6 @@
   "customer.dueDiligence.scope.paragraph1": "In the context of AC's activities, the application of this policy aims not only to mitigate the risks associated with money laundering and terrorist financing, but also to prevent exposure to risks of bribery, corruption, fraud, conflicts of interest and other practices that may compromise the legality, reputation and sustainability of the business relationships established.",
   "customer.dueDiligence.scope.paragraph2": "To this end, risk-proportionate due diligence mechanisms are defined, which enable the assessment of customers' suitability, an understanding of the nature of their business, the origin of funds and the framework of commercial relationships, ensuring that these are compatible with the applicable legal, regulatory and internal requirements.",
   "customer.dueDiligence.scope.paragraph3": "This policy applies to all employees, members of the governing bodies and all organisational units of AC, and is mandatory in the context of establishing, maintaining and reviewing any business relationships, regardless of the channel, geography or nature of the services provided.",
-
-
-
   "infoSecurity.policy.title": "Information Security Policy for Suppliers and Service Providers",
   "infoSecurity.objective.title": "1. Objective",
   "infoSecurity.objective.paragraph1": "This Policy establishes the principles, rules and responsibilities applicable to Information Security within the scope of the relationship between AC and its suppliers and service providers, ensuring adequate protection of information assets, personal data and business information.",
@@ -759,8 +749,6 @@
   "infoSecurity.scope.item10": "Classified information;",
   "infoSecurity.scope.item11": "Information systems;",
   "infoSecurity.scope.item12": "Technology infrastructures.",
-
-  
   "ai": "AI",
   "gpu.npu": "ON-DEMAND GPUs & NPUs",
   "international.connectivity": "IP TRANSIT, IPLC, REMOTE PEERING ...",
@@ -807,7 +795,6 @@
   "web-hosting.desc": "Web hosting with high availability and scalability. Host your web projects and emails with maximum security.",
   "kubernetes": "KUBERNETES",
   "kubernetes.desc": "Manage your Kubernetes clusters using a rich and intuitive dashboard, leveraging our distributed infrastructure.",
-
   "hero_bg_aria_label": "Background image for product",
   "loading_text": "Loading product details...",
   "error_title_message": "Oops! Something went wrong.",
@@ -817,7 +804,7 @@
   "featured_img_aria_label": "Featured Product Image",
   "big_numbers_title": "Big Numbers",
   "value_of": "Value of",
-  "metric_of": "Metric of",
+  "metric_of": "Metric of {{title}}: {{value}}",
   "main_features_title": "Main Features",
   "cta_title": "Ready to take your business to the next level?",
   "cta_subtitle": "Get started with",
@@ -832,6 +819,18 @@
   "sec_title": "DDoS Attack Protection",
   "sec_desc": "DDoS Penetration Testing Service. Contact us at Sales.ACSA@angolacables.co.ao",
   "get_started": "Get Started",
-  "ourpolicies": "Our Policies"
-
+  "ourpolicies": "Our Policies",
+  "error_not_found": "Product not found",
+  "error_load_failed": "Failed to load product",
+  "product_fallback": "Product",
+  "share_product_text": "Check out {{name}} - {{description}}",
+  "link_copied_success": "Link copied successfully!",
+  "link_copied_error": "Error copying link.",
+  "trend_exceptional": "Exceptional growth",
+  "trend_accelerated": "Accelerated growth",
+  "trend_excellent": "Excellent",
+  "trend_good": "Good",
+  "trend_positive": "Positive",
+  "trend_developing": "In development",
+  "not_available": "N/A"
 }

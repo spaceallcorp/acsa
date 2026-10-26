@@ -33,59 +33,153 @@ import { LoginComponent } from './paginas/login/login.component';
 import { AuthGuard } from './guards/auth.guards';
 
 export const routes: Routes = [
-  { path: '', component: InicioComponent },
-  { path: 'inicio', component: InicioComponent },
-  { path: 'sobre', component: AcercaComponent },
+  {
+    path: '',
+    component: InicioComponent,
+    title: 'Início - Angola Cables'
+  },
+  {
+    path: 'inicio',
+    component: InicioComponent,
+    title: 'Início - Angola Cables'
+  },
+  {
+    path: 'sobre',
+    component: AcercaComponent,
+    title: 'Sobre Nós - Angola Cables'
+  },
+  {
+    path: 'conta',
+    component: SignupComponent,
+    title: 'Criar Conta - Angola Cables'
+  },
+  {
+    path: 'indicador',
+    component: IndicadorComponent,
+    title: 'Indicadores - Angola Cables'
+  },
+  {
+    path: 'agente',
+    component: AgenteComponent,
+    title: 'Seja um Agente - Angola Cables'
+  },
+  {
+    path: 'datacenter',
+    component: DatacenterComponent,
+    title: 'Data Center - Angola Cables'
+  },
+  {
+    path: 'angonap2',
+    component: Angonap2Component,
+    title: 'AngoNAP Fortaleza - Angola Cables'
+  },
+  {
+    path: 'eventos',
+    component: EventosAcComponent,
+    title: 'Eventos - Angola Cables'
+  },
+  {
+    path: 'blog',
+    component: BlogComponent,
+    title: 'Blog - Angola Cables'
+  },
+  {
+    path: 'artigo',
+    component: ArtigoComponent,
+    title: 'Artigo - Angola Cables'
+  },
+  {
+    path: 'conectividade',
+    component: ConectividadeComponent,
+    title: 'Conectividade - Angola Cables'
+  },
+  {
+    path: 'cloud',
+    component: CloudservicesComponent,
+    title: 'Cloud Services - Angola Cables'
+  },
+  {
+    path: 'data-center',
+    component: DatacentersevicesComponent,
+    title: 'Serviços de Data Center - Angola Cables'
+  },
+  {
+    path: 'seguranca',
+    component: SegurancaComponent,
+    title: 'Segurança - Angola Cables'
+  },
+  {
+    path: 'noticias',
+    component: NoticiasComponent,
+    title: 'Notícias - Angola Cables'
+  },
+  {
+    path: 'contacto',
+    component: ContactoComponent,
+    title: 'Contacto - Angola Cables'
+  },
+  {
+    path: 'recrutamento',
+    component: RecrutamentoComponent,
+    title: 'Recrutamento - Angola Cables'
+  },
+  {
+    path: 'virtualizacao',
+    component: VirtualizacaoComponent,
+    title: 'Virtualização - Angola Cables'
+  },
+  {
+    path: 'erp',
+    component: ErpComponent,
+    title: 'Cloud2ERP - Angola Cables'
+  },
+  {
+    path: 'trust-center',
+    component: TrustCenterComponent,
+    title: 'Trust Center - Angola Cables'
+  },
 
-  { path: 'conta', component: SignupComponent },
-  { path: 'indicador', component: IndicadorComponent },
-  { path: 'agente', component: AgenteComponent },
-  { path: 'datacenter', component: DatacenterComponent },
-  { path: 'angonap2', component: Angonap2Component },
-  { path: 'eventos', component: EventosAcComponent },
-  { path: 'blog', component: BlogComponent },
-  { path: 'artigo', component: ArtigoComponent },
-  { path: 'conectividade', component: ConectividadeComponent },
-  { path: 'cloud', component: CloudservicesComponent },
-  { path: 'data-center', component: DatacentersevicesComponent },
-  { path: 'seguranca', component: SegurancaComponent },
-  { path: 'noticias', component: NoticiasComponent },
-  { path: 'contacto', component: ContactoComponent },
-  { path: 'recrutamento', component: RecrutamentoComponent },
-  { path: 'datacenter', component: DatacentersevicesComponent },
-  { path: 'virtualizacao', component: VirtualizacaoComponent },
-  { path: 'erp', component: ErpComponent },
-  { path: 'trust-center', component: TrustCenterComponent },
+  {
+    path: 'artigos/ip-transit-chave',
+    component: IptransitComponent,
+    title: 'IP Transit - Angola Cables'
+  },
+  {
+    path: 'artigos/ciberseguranca',
+    component: CibersecComponent,
+    title: 'Cibersegurança - Angola Cables'
+  },
+  {
+    path: 'artigos/cloud2-como-montar',
+    component: Cloud2MontagemComponent,
+    title: 'Cloud2Africa - Angola Cables'
+  },
 
-  { path: 'artigos/ip-transit-chave', component: IptransitComponent },
-  { path: 'artigos/ciberseguranca', component: CibersecComponent },
-  { path: 'artigos/cloud2-como-montar', component: Cloud2MontagemComponent },
-
-  { path: 'mkt-proibido', component: DashboardComponent },
-
+  {
+    path: 'mkt-proibido',
+    component: DashboardComponent,
+    title: 'Marketing - Angola Cables'
+  },
 
   {
     path: 'dashboard',
     component: DashboardComponent,
-    title: "Dashboard - AngolaCables",
+    title: 'Dashboard - Angola Cables',
     canActivate: [AuthGuard.canActivate]
-    // ✅ Rota protegida
   },
-    { path: 'login', component: LoginComponent },
+  {
+    path: 'login',
+    component: LoginComponent,
+    title: 'Login - Angola Cables'
+  },
 
-
-    {
+  {
     path: 'product/:id',
     component: ProductDetailComponent,
-
     resolve: {
       productName: productResolver
     },
-
-    title: 'Produtos - TelCables South Africa'
-  
-
-
+    title: 'Produtos - Angola Cables'
   },
   {
     path: 'privacy-policies',
@@ -93,6 +187,7 @@ export const routes: Routes = [
       import('./paginas/privacy-policies/privacy-policies.component').then(
         (m) => m.PrivacyPoliciesComponent,
       ),
+    title: 'Políticas de Privacidade - Angola Cables'
   },
   {
     path: 'cookies-policies',
@@ -100,105 +195,88 @@ export const routes: Routes = [
       import('./paginas/politicas-cookies/politicas-cookies.component').then(
         (m) => m.PoliticasCookiesComponent,
       ),
+    title: 'Políticas de Cookies - Angola Cables'
   },
-
   {
     path: 'politicas-cont-negocios',
     loadComponent: () =>
       import('./paginas/politicas-cont-negocios/politicas-cont-negocios.component').then(
         (m) => m.PoliticasContNegociosComponent,
       ),
+    title: 'Políticas de Continuidade de Negócios - Angola Cables'
   },
-
-
-    {
+  {
     path: 'politicas-contrat',
-
     loadComponent: () =>
       import('./paginas/politicas-contrat/politicas-contrat.component').then(
         (m) => m.PoliticasContratComponent,
       ),
+    title: 'Políticas de Contratação - Angola Cables'
   },
-
-  
-  // Produtos (rota com parâmetro)
   {
-    path: 'product/:id',
-    component: ProductDetailComponent,
-
-    resolve: {
-      productName: productResolver
-    },
-
-    title: 'Produtos - TelCables South Africa'
-  
-
-
-  },
-    {
     path: 'politicas-id-dued',
-
     loadComponent: () =>
       import('./paginas/politicas-id-duediligence/politicas-id-duediligence.component').then(
         (m) => m.PoliticasIdDuediligenceComponent,
       ),
+    title: 'Políticas de Due Diligence - Angola Cables'
   },
-
-    {
+  {
     path: 'politicas-seginf',
-
     loadComponent: () =>
       import('./paginas/politicas-seginf/politicas-seginf.component').then(
         (m) => m.PoliticasSeginfComponent,
       ),
+    title: 'Políticas de Segurança da Informação - Angola Cables'
   },
-
   {
     path: 'sgi',
     loadComponent: () =>
       import('./paginas/sgi/sgi.component').then((m) => m.SgiComponent),
+    title: 'SGI - Angola Cables'
   },
-
   {
     path: 'anti',
     loadComponent: () =>
       import('./paginas/anti/anti.component').then((m) => m.AntiComponent),
+    title: 'Política Anticorrupção - Angola Cables'
   },
-
   {
     path: 'community-lists',
     loadComponent: () =>
       import('./paginas/community-lists/community-lists.component').then(
         (m) => m.CommunityListsComponent,
       ),
+    title: 'Community Lists - Angola Cables'
   },
-
   {
     path: 'artigos',
     loadComponent: () =>
       import('./layout/artigo-lista/artigo-lista.component').then(
         (m) => m.ArtigoListaComponent,
       ),
+    title: 'Artigos - Angola Cables'
   },
   {
     path: 'artigo/:id',
     loadComponent: () =>
       import('./layout/artigo/artigo.component').then((m) => m.ArtigoComponent),
+    title: 'Artigo - Angola Cables'
   },
-
   {
     path: 'postar',
     loadComponent: () =>
       import('./layout/artigo-postar/artigo-postar.component').then(
         (m) => m.ArtigoPostarComponent,
       ),
+    title: 'Publicar Artigo - Angola Cables'
   },
-
   {
     path: 'postar-vaga',
     loadComponent: () =>
       import('./layout/vagas-criar/vagas-criar.component').then(
         (m) => m.VagasCriarComponent,
       ),
+    title: 'Publicar Vaga - Angola Cables'
   },
 ];
