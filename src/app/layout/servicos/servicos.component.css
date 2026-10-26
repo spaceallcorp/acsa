@@ -96,36 +96,18 @@
     text-shadow: #131313 2px 0 20px;
 }
 
-.uk-button-secondary {
-    border-color: black;
-    border-width: 2px;
-}
-
 .promo-video {
     border-radius: 30px;
 }
 
-
-.bg-pattern {
-
-    background-image: url('/img/bg-pattern.jpg');
-    background-size: cover;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
-
-
-
-
-}
-
 .uk-button-secondary {
+    border: 2px solid black;
     background: linear-gradient(-190deg, #131313, #000000, #141414);
     color: #fff;
 }
 
 .uk-button-secondary:hover {
     background: linear-gradient(-190deg, #131313, #292929, #191919);
-
     color: #fff;
     transition: 800ms;
 }
@@ -171,177 +153,6 @@
 }
 
 
-.fundo-connectivity {
-    background-image: url('/img/sacs.jpg');
-    background-color: black;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-color: rgba(5, 0, 100, 0.788);
-    background-blend-mode: darken;
-    padding-top: 20px;
-
-}
-
-
-.fundo-datacenter {
-    background-image: url('/img/fundo-datacenter.jpg');
-    background-color: black;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-color: rgba(5, 0, 100, 0.788);
-    background-blend-mode: darken;
-    padding-top: 20px;
-
-}
-
-.fundo-cloud {
-    background-image: url('/img/cloud.jpg');
-    background-color: black;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-color: rgba(5, 0, 100, 0.788);
-    background-blend-mode: darken;
-    padding-top: 20px;
-
-}
-
-
-
-
-.fundo-dc {
-    background-image: url('/img/conectividade_angolacables.jpeg');
-    background-position: center;
-    border-color: #fff;
-    border-width: 1px;
-    border-style: solid;
-    background-color: black;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-color: rgba(5, 0, 100, 0.788);
-    background-blend-mode: darken;
-}
-
-.fundo-acess {
-    background-image: url('/img/acess_angolacables.jpeg');
-    background-position: center;
-    border-color: #fff;
-    border-width: 1px;
-    border-style: solid;
-    background-color: black;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-color: rgba(5, 0, 100, 0.788);
-    background-blend-mode: darken;
-}
-
-
-.fundo-dc2 {
-    background-image: url('/img/acess_angolacables.jpeg');
-    background-position: center;
-    border-color: #fff;
-    border-width: 1px;
-    border-style: solid;
-    background-color: black;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-color: rgba(5, 0, 100, 0.788);
-    background-blend-mode: darken;
-}
-
-
-
-.fundo-dc3 {
-    background-image: url('/img/datacenter-1.png');
-    background-position: center;
-    border-color: #fff;
-    border-width: 1px;
-    border-style: solid;
-    background-color: black;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-color: rgba(5, 0, 100, 0.788);
-    background-blend-mode: darken;
-}
-
-.fundo-dc4 {
-    background-image: url('/img/seguranca.jpeg');
-    background-position: center;
-    border-color: #fff;
-    border-width: 1px;
-    border-style: solid;
-    background-color: black;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-color: rgba(5, 0, 100, 0.788);
-    background-blend-mode: darken;
-}
-
-
-
-.fundo-dc5 {
-    background-image: url('/img/cloud.jpeg');
-    background-position: center;
-    border-color: #fff;
-    border-width: 1px;
-    border-style: solid;
-    background-color: black;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-color: rgba(5, 0, 100, 0.788);
-    background-blend-mode: darken;
-}
-
-
-
-.fundo-dc6 {
-    background-image: url('/img/virtualizacao.jpeg');
-    background-position: center;
-    border-color: #fff;
-    border-width: 1px;
-    border-style: solid;
-    background-color: black;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-color: rgba(5, 0, 100, 0.788);
-    background-blend-mode: darken;
-}
-
-.fundo-dc7 {
-    background-image: url('/img/erp.png');
-    background-position: center;
-    border-color: #fff;
-    border-width: 1px;
-    border-style: solid;
-    background-color: black;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-color: rgba(5, 0, 100, 0.788);
-    background-blend-mode: darken;
-}
-
-
 .fundo-connectivity,
 .fundo-datacenter,
 .fundo-cloud,
@@ -353,8 +164,40 @@
 .fundo-dc5,
 .fundo-dc6,
 .fundo-dc7 {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgba(5, 0, 100, 0.788);
+    background-blend-mode: darken;
+    border: 1px solid #fff;
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
+
+.fundo-connectivity {
+    background-image: url('/img/sacs.jpg');
+    padding-top: 20px;
+    border: none;
+}
+
+.fundo-datacenter {
+    background-image: url('/img/fundo-datacenter.jpg');
+    padding-top: 20px;
+    border: none;
+}
+
+.fundo-cloud {
+    background-image: url('/img/cloud.jpg');
+    padding-top: 20px;
+    border: none;
+}
+
+.fundo-dc { background-image: url('/img/conectividade_angolacables.jpeg'); }
+.fundo-acess, .fundo-dc2 { background-image: url('/img/acess_angolacables.jpeg'); }
+.fundo-dc3 { background-image: url('/img/datacenter-1.png'); }
+.fundo-dc4 { background-image: url('/img/seguranca.jpeg'); }
+.fundo-dc5 { background-image: url('/img/cloud.jpeg'); }
+.fundo-dc6 { background-image: url('/img/virtualizacao.jpeg'); }
+.fundo-dc7 { background-image: url('/img/erp.png'); }
 
 .fundo-connectivity:hover,
 .fundo-datacenter:hover,
@@ -690,43 +533,30 @@
 
 
     .tab-nav-wrapper {
-        /* Allows the container to scroll horizontally if tabs overflow 400px */
         overflow-x: auto;
         justify-content: center;
-        /* Aligns to left so scrolling feels natural */
-        padding: 0 0;
-        /* Hides scrollbars for a cleaner look on mobile */
+        padding: 0;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
-        /* Firefox */
     }
 
     .tab-nav-wrapper::-webkit-scrollbar {
         display: none;
-        /* Safari and Chrome */
     }
 
     .custom-tech-tabs {
         gap: 6px;
-        /* Halved the spacing between tabs */
         padding: 4px;
-        /* Shrunk the outer wrapper padding */
         border-radius: 20px;
-        /* Adjusted radius for smaller scale */
         display: inline-flex;
         margin: 0 auto;
-        /* Keeps it centered if it doesn't overflow */
     }
 
     .custom-tech-tabs li a {
-        padding: 8px 8px;
-        /* Significantly reduced padding for tighter fit */
+        padding: 8px;
         font-size: 0.85rem;
-        /* Slightly smaller text for readability on mobile */
         border-radius: 16px;
-        /* Adjusted radius */
     }
-
 }
 
 /* Extra small screens (phones, 480px and below) */
@@ -750,52 +580,20 @@
     }
 }
 
-/* Specific adjustments for the language dropdown */
 @media (max-width: 400px) {
     .featured-service-logo {
         width: 110px !important;
         height: 40px !important;
     }
 
-    .tab-nav-wrapper {
-        /* Allows the container to scroll horizontally if tabs overflow 400px */
-        overflow-x: auto;
-        justify-content: center;
-        /* Aligns to left so scrolling feels natural */
-        padding: 0 0;
-        /* Hides scrollbars for a cleaner look on mobile */
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-        /* Firefox */
-    }
-
-    .tab-nav-wrapper::-webkit-scrollbar {
-        display: none;
-        /* Safari and Chrome */
-    }
-
     .custom-tech-tabs {
         gap: 3px;
-        /* Halved the spacing between tabs */
-        padding: 4px 4px;
-        /* Shrunk the outer wrapper padding */
-        border-radius: 20px;
-        /* Adjusted radius for smaller scale */
-        display: inline-flex;
-        margin: 0 auto;
-        /* Keeps it centered if it doesn't overflow */
     }
 
     .custom-tech-tabs li a {
         padding: 8px 16px;
-        /* Significantly reduced padding for tighter fit */
-        font-size: 0.85rem;
-        /* Slightly smaller text for readability on mobile */
-        border-radius: 16px;
-        /* Adjusted radius */
     }
 }
-
 
 @media (max-width: 360px) {
     .slide-content {
@@ -810,43 +608,6 @@
     .ad-headline {
         font-size: 0.98rem !important;
     }
-
-    .tab-nav-wrapper {
-        /* Allows the container to scroll horizontally if tabs overflow 400px */
-        overflow-x: auto;
-        justify-content: center;
-        /* Aligns to left so scrolling feels natural */
-        padding: 0 0;
-        /* Hides scrollbars for a cleaner look on mobile */
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-        /* Firefox */
-    }
-
-    .tab-nav-wrapper::-webkit-scrollbar {
-        display: none;
-        /* Safari and Chrome */
-    }
-
-    .custom-tech-tabs {
-        gap: 4px;
-        /* Halved the spacing between tabs */
-        padding: 4px;
-        /* Shrunk the outer wrapper padding */
-        border-radius: 20px;
-        /* Adjusted radius for smaller scale */
-        display: inline-flex;
-        /* Keeps it centered if it doesn't overflow */
-    }
-
-    .custom-tech-tabs li a {
-        padding: 8px 16px;
-        /* Significantly reduced padding for tighter fit */
-        font-size: 0.85rem;
-        /* Slightly smaller text for readability on mobile */
-        border-radius: 16px;
-        /* Adjusted radius */
-    }
 }
 
 @media (max-width: 344px) {
@@ -854,55 +615,10 @@
         font-size: 0.95rem !important;
     }
 
-.tab-nav-wrapper {
-        /* Allows the container to scroll horizontally if tabs overflow 400px */
-        overflow-x: auto;
-        justify-content: center;
-        /* Aligns to left so scrolling feels natural */
-        padding: 0 0;
-        /* Hides scrollbars for a cleaner look on mobile */
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-        /* Firefox */
-    }
-
-    .tab-nav-wrapper::-webkit-scrollbar {
-        display: none;
-        /* Safari and Chrome */
-    }
-
-    .custom-tech-tabs {
-        gap: 3px;
-        /* Halved the spacing between tabs */
-        padding: 4px 4px;
-        /* Shrunk the outer wrapper padding */
-        border-radius: 20px;
-        /* Adjusted radius for smaller scale */
-        display: inline-flex;
-        margin: 0 auto;
-        /* Keeps it centered if it doesn't overflow */
-    }
-
     .custom-tech-tabs li a {
-        padding:2px 8px;
-        /* Significantly reduced padding for tighter fit */
-        font-size: 0.85rem;
-        /* Slightly smaller text for readability on mobile */
-        border-radius: 16px;
-        /* Adjusted radius */
+        padding: 2px 8px;
     }
-
 }
-
-/* Landscape orientation adjustments */
-@media screen and (max-width: 767px) and (orientation: landscape) {}
-
-/* High DPI screens adjustments */
-@media (-webkit-min-device-pixel-ratio: 2),
-(min-resolution: 192dpi) {}
-
-/* Custom Breakpoint Override: Force Mobile Nav until 1200px */
-@media (max-width: 1199px) {}
 
 /* =========================================================
    NAVIGATION ARROWS (Round Blue Background & Bold Arrow)
