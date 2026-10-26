@@ -25,7 +25,7 @@
 .slide-content {
     width: 100%;
     max-width: 680px;
-    padding: 24px 48px;
+    padding: 24px 48px 24px 72px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -643,7 +643,7 @@
 @media (max-width: 1199px) and (min-width: 768px) {
 
     .slide-content {
-        padding: 20px 36px;
+        padding: 20px 36px 20px 68px;
         max-width: 85%;
     }
 
@@ -666,7 +666,7 @@
 /* Small screens (phones, 767px and below) */
 @media (max-width: 767px) {
     .slide-content {
-        padding: 16px 24px;
+        padding: 16px 20px 16px 58px;
         max-width: 100%;
     }
 
@@ -732,7 +732,7 @@
 /* Extra small screens (phones, 480px and below) */
 @media (max-width: 480px) {
     .slide-content {
-        padding: 14px 20px;
+        padding: 14px 16px 14px 52px;
     }
 
     .featured-service-logo {
@@ -799,7 +799,7 @@
 
 @media (max-width: 360px) {
     .slide-content {
-        padding: 12px 16px;
+        padding: 12px 14px 12px 48px;
     }
 
     .featured-service-logo {
@@ -903,3 +903,82 @@
 
 /* Custom Breakpoint Override: Force Mobile Nav until 1200px */
 @media (max-width: 1199px) {}
+
+/* =========================================================
+   NAVIGATION ARROWS (Round Blue Background & Bold Arrow)
+   ========================================================= */
+.slideshow-nav-arrow,
+.slider-nav-arrow {
+    width: 46px !important;
+    height: 46px !important;
+    border-radius: 50% !important;
+    background-color: #28C1FD !important;
+    color: #ffffff !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+    transition: all 0.25s ease-in-out;
+    z-index: 10;
+}
+
+.slideshow-nav-arrow:hover,
+.slider-nav-arrow:hover {
+    background-color: #0eb0f0 !important;
+    color: #ffffff !important;
+    box-shadow: 0 6px 18px rgba(40, 193, 253, 0.5);
+    transform: translateY(-50%) scale(1.1) !important;
+}
+
+.slideshow-nav-arrow svg,
+.slider-nav-arrow svg {
+    width: 14px !important;
+    height: 24px !important;
+}
+
+.slideshow-nav-arrow svg polyline,
+.slideshow-nav-arrow polyline,
+.slider-nav-arrow svg polyline,
+.slider-nav-arrow polyline {
+    stroke: #ffffff !important;
+    stroke-width: 3.2px !important;
+    stroke-linecap: round !important;
+    stroke-linejoin: round !important;
+}
+
+/* Ensure arrows are always visible and positioned inside on mobile */
+@media (max-width: 959px) {
+    .slider-nav-arrow.uk-position-center-left-out {
+        left: 10px !important;
+        right: auto !important;
+    }
+    .slider-nav-arrow.uk-position-center-right-out {
+        right: 10px !important;
+        left: auto !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .slideshow-nav-arrow {
+        width: 38px !important;
+        height: 38px !important;
+    }
+    .slideshow-nav-arrow svg {
+        width: 12px !important;
+        height: 20px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .slideshow-nav-arrow {
+        width: 34px !important;
+        height: 34px !important;
+    }
+    .slideshow-nav-arrow svg {
+        width: 10px !important;
+        height: 18px !important;
+    }
+}

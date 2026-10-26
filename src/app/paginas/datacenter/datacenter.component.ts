@@ -50,7 +50,7 @@ export class DatacenterComponent {
 
 
     if (this.visitForm.invalid) {
-      window.alert('Por favor, preencha correctamente todos os campos obrigatórios.');
+      window.alert(this.translate.instant('form_preencha_obrigatorios'));
       return;
     }
 

@@ -832,5 +832,18 @@
   "trend_good": "Good",
   "trend_positive": "Positive",
   "trend_developing": "In development",
-  "not_available": "N/A"
+  "not_available": "N/A",
+  "datacenter.subtitulo": "Data Centers",
+  "datacenter.espaco_hospedagem": "Hosting Space",
+  "datacenter.angonap1_expansivel": "Expandable up to 1000 racks",
+  "datacenter.angonap2_expansivel": "Expandable up to 400 racks",
+  "datacenter.dimensao_racks": "Rack Dimensions",
+  "datacenter.protecao_incendio": "Fire protection",
+  "datacenter.angonap1_incendio": "Novec Gas and HSSD",
+  "datacenter.angonap2_incendio": "FM 200 Gas and HSSD",
+  "datacenter.angonap_title": "AngoNAP",
+  "datacenter.managed_services_title": "Managed Services",
+  "datacenter.gdi_title": "Global Data Center Interconnection",
+  "form_preencha_obrigatorios": "Please correctly fill in all required fields.",
+  "menu-web-hosting-email": "Web Hosting & E-mail"
 }

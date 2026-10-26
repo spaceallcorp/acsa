@@ -1,0 +1,18 @@
+# Robots.txt for Angola Cables
+# Website: https://angolacables.co.ao
+
+User-agent: *
+Allow: /
+
+# Disallow non-public and administrative routes
+Disallow: /login
+Disallow: /dashboard
+Disallow: /conta
+Disallow: /mkt-proibido
+Disallow: /postar
+Disallow: /postar-vaga
+
+# Host & Sitemap
+Host: https://angolacables.co.ao
+Sitemap: https://angolacables.co.ao/sitemap.xml
+

@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- ==================== HOME ==================== -->
+  <url>
+    <loc>https://angolacables.co.ao/</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://angolacables.co.ao/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://angolacables.co.ao/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://angolacables.co.ao/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://angolacables.co.ao/" />
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- ==================== CORE SERVICES & SOLUTIONS ==================== -->
+  <url>
+    <loc>https://angolacables.co.ao/conectividade</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://angolacables.co.ao/conectividade" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://angolacables.co.ao/conectividade" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://angolacables.co.ao/conectividade" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://angolacables.co.ao/conectividade" />
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://angolacables.co.ao/cloud</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://angolacables.co.ao/cloud" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://angolacables.co.ao/cloud" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://angolacables.co.ao/cloud" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://angolacables.co.ao/cloud" />
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://angolacables.co.ao/data-center</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://angolacables.co.ao/data-center" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://angolacables.co.ao/data-center" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://angolacables.co.ao/data-center" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://angolacables.co.ao/data-center" />
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://angolacables.co.ao/datacenter</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://angolacables.co.ao/datacenter" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://angolacables.co.ao/datacenter" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://angolacables.co.ao/datacenter" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://angolacables.co.ao/datacenter" />
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://angolacables.co.ao/angonap2</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://angolacables.co.ao/angonap2" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://angolacables.co.ao/angonap2" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://angolacables.co.ao/angonap2" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://angolacables.co.ao/angonap2" />
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://angolacables.co.ao/seguranca</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://angolacables.co.ao/seguranca" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://angolacables.co.ao/seguranca" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://angolacables.co.ao/seguranca" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://angolacables.co.ao/seguranca" />
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://angolacables.co.ao/virtualizacao</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://angolacables.co.ao/virtualizacao" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://angolacables.co.ao/virtualizacao" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://angolacables.co.ao/virtualizacao" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://angolacables.co.ao/virtualizacao" />
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://angolacables.co.ao/erp</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://angolacables.co.ao/erp" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://angolacables.co.ao/erp" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://angolacables.co.ao/erp" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://angolacables.co.ao/erp" />
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- ==================== PRODUCTS ==================== -->
+  <url>
+    <loc>https://angolacables.co.ao/product/ip_transit</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://angolacables.co.ao/product/ip_transit" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://angolacables.co.ao/product/ip_transit" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://angolacables.co.ao/product/ip_transit" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://angolacables.co.ao/product/ip_transit" />
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://angolacables.co.ao/product/international_private_leased_circuit</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://angolacables.co.ao/product/international_private_leased_circuit" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://angolacables.co.ao/product/international_private_leased_circuit" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://angolacables.co.ao/product/international_private_leased_circuit" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://angolacables.co.ao/product/international_private_leased_circuit" />
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://angolacables.co.ao/product/remote_peering</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://angolacables.co.ao/product/remote_peering" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://angolacables.co.ao/product/remote_peering" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://angolacables.co.ao/product/remote_peering" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://angolacables.co.ao/product/remote_peering" />
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://angolacables.co.ao/product/direct_internet_access_dia</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://angolacables.co.ao/product/direct_internet_access_dia" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://angolacables.co.ao/product/direct_internet_access_dia" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://angolacables.co.ao/product/direct_internet_access_dia" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://angolacables.co.ao/product/direct_internet_access_dia" />
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://angolacables.co.ao/product/global_data_center_interconnection_gdi</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://angolacables.co.ao/product/global_data_center_interconnection_gdi" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://angolacables.co.ao/product/global_data_center_interconnection_gdi" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://angolacables.co.ao/product/global_data_center_interconnection_gdi" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://angolacables.co.ao/product/global_data_center_interconnection_gdi" />
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://angolacables.co.ao/product/acloud_connect</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://angolacables.co.ao/product/acloud_connect" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://angolacables.co.ao/product/acloud_connect" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://angolacables.co.ao/product/acloud_connect" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://angolacables.co.ao/product/acloud_connect" />
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://angolacables.co.ao/product/clouds2africa</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://angolacables.co.ao/product/clouds2africa" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://angolacables.co.ao/product/clouds2africa" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://angolacables.co.ao/product/clouds2africa" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://angolacables.co.ao/product/clouds2africa" />
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://angolacables.co.ao/product/backup2africa</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://angolacables.co.ao/product/backup2africa" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://angolacables.co.ao/product/backup2africa" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://angolacables.co.ao/product/backup2africa" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://angolacables.co.ao/product/backup2africa" />
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://angolacables.co.ao/product/managed_kubernetes</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://angolacables.co.ao/product/managed_kubernetes" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://angolacables.co.ao/product/managed_kubernetes" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://angolacables.co.ao/product/managed_kubernetes" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://angolacables.co.ao/product/managed_kubernetes" />
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://angolacables.co.ao/product/storage-as-a-service</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://angolacables.co.ao/product/storage-as-a-service" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://angolacables.co.ao/product/storage-as-a-service" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://angolacables.co.ao/product/storage-as-a-service" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://angolacables.co.ao/product/storage-as-a-service" />
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://angolacables.co.ao/product/cleanpipe_-_anti-ddos</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://angolacables.co.ao/product/cleanpipe_-_anti-ddos" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://angolacables.co.ao/product/cleanpipe_-_anti-ddos" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://angolacables.co.ao/product/cleanpipe_-_anti-ddos" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://angolacables.co.ao/product/cleanpipe_-_anti-ddos" />
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://angolacables.co.ao/product/origin_protection_-_anti-ddos</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://angolacables.co.ao/product/origin_protection_-_anti-ddos" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://angolacables.co.ao/product/origin_protection_-_anti-ddos" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://angolacables.co.ao/product/origin_protection_-_anti-ddos" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://angolacables.co.ao/product/origin_protection_-_anti-ddos" />
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://angolacables.co.ao/product/application_protection_service</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://angolacables.co.ao/product/application_protection_service" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://angolacables.co.ao/product/application_protection_service" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://angolacables.co.ao/product/application_protection_service" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://angolacables.co.ao/product/application_protection_service" />
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://angolacables.co.ao/product/dns_protection_service</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://angolacables.co.ao/product/dns_protection_service" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://angolacables.co.ao/product/dns_protection_service" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://angolacables.co.ao/product/dns_protection_service" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://angolacables.co.ao/product/dns_protection_service" />
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://angolacables.co.ao/product/colocation</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://angolacables.co.ao/product/colocation" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://angolacables.co.ao/product/colocation" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://angolacables.co.ao/product/colocation" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://angolacables.co.ao/product/colocation" />
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://angolacables.co.ao/product/managed_services</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://angolacables.co.ao/product/managed_services" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://angolacables.co.ao/product/managed_services" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://angolacables.co.ao/product/managed_services" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://angolacables.co.ao/product/managed_services" />
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://angolacables.co.ao/product/shields2africa</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://angolacables.co.ao/product/shields2africa" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://angolacables.co.ao/product/shields2africa" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://angolacables.co.ao/product/shields2africa" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://angolacables.co.ao/product/shields2africa" />
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- ==================== COMPANY & ENGAGEMENT ==================== -->
+  <url>
+    <loc>https://angolacables.co.ao/sobre</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://angolacables.co.ao/sobre" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://angolacables.co.ao/sobre" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://angolacables.co.ao/sobre" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://angolacables.co.ao/sobre" />
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://angolacables.co.ao/noticias</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://angolacables.co.ao/noticias" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://angolacables.co.ao/noticias" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://angolacables.co.ao/noticias" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://angolacables.co.ao/noticias" />
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://angolacables.co.ao/eventos</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://angolacables.co.ao/eventos" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://angolacables.co.ao/eventos" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://angolacables.co.ao/eventos" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://angolacables.co.ao/eventos" />
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://angolacables.co.ao/blog</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://angolacables.co.ao/blog" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://angolacables.co.ao/blog" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://angolacables.co.ao/blog" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://angolacables.co.ao/blog" />
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://angolacables.co.ao/artigos</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://angolacables.co.ao/artigos" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://angolacables.co.ao/artigos" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://angolacables.co.ao/artigos" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://angolacables.co.ao/artigos" />
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://angolacables.co.ao/contacto</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://angolacables.co.ao/contacto" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://angolacables.co.ao/contacto" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://angolacables.co.ao/contacto" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://angolacables.co.ao/contacto" />
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://angolacables.co.ao/recrutamento</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://angolacables.co.ao/recrutamento" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://angolacables.co.ao/recrutamento" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://angolacables.co.ao/recrutamento" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://angolacables.co.ao/recrutamento" />
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://angolacables.co.ao/agente</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://angolacables.co.ao/agente" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://angolacables.co.ao/agente" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://angolacables.co.ao/agente" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://angolacables.co.ao/agente" />
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://angolacables.co.ao/indicador</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://angolacables.co.ao/indicador" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://angolacables.co.ao/indicador" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://angolacables.co.ao/indicador" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://angolacables.co.ao/indicador" />
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://angolacables.co.ao/trust-center</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://angolacables.co.ao/trust-center" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://angolacables.co.ao/trust-center" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://angolacables.co.ao/trust-center" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://angolacables.co.ao/trust-center" />
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://angolacables.co.ao/community-lists</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://angolacables.co.ao/community-lists" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://angolacables.co.ao/community-lists" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://angolacables.co.ao/community-lists" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://angolacables.co.ao/community-lists" />
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ==================== PILLAR ARTICLES ==================== -->
+  <url>
+    <loc>https://angolacables.co.ao/artigos/ip-transit-chave</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://angolacables.co.ao/artigos/ip-transit-chave" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://angolacables.co.ao/artigos/ip-transit-chave" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://angolacables.co.ao/artigos/ip-transit-chave" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://angolacables.co.ao/artigos/ip-transit-chave" />
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://angolacables.co.ao/artigos/ciberseguranca</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://angolacables.co.ao/artigos/ciberseguranca" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://angolacables.co.ao/artigos/ciberseguranca" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://angolacables.co.ao/artigos/ciberseguranca" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://angolacables.co.ao/artigos/ciberseguranca" />
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://angolacables.co.ao/artigos/cloud2-como-montar</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://angolacables.co.ao/artigos/cloud2-como-montar" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://angolacables.co.ao/artigos/cloud2-como-montar" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://angolacables.co.ao/artigos/cloud2-como-montar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://angolacables.co.ao/artigos/cloud2-como-montar" />
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- ==================== LEGAL & COMPLIANCE ==================== -->
+  <url>
+    <loc>https://angolacables.co.ao/privacy-policies</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://angolacables.co.ao/privacy-policies" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://angolacables.co.ao/privacy-policies" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://angolacables.co.ao/privacy-policies" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://angolacables.co.ao/privacy-policies" />
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://angolacables.co.ao/cookies-policies</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://angolacables.co.ao/cookies-policies" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://angolacables.co.ao/cookies-policies" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://angolacables.co.ao/cookies-policies" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://angolacables.co.ao/cookies-policies" />
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://angolacables.co.ao/politicas-cont-negocios</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://angolacables.co.ao/politicas-cont-negocios" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://angolacables.co.ao/politicas-cont-negocios" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://angolacables.co.ao/politicas-cont-negocios" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://angolacables.co.ao/politicas-cont-negocios" />
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://angolacables.co.ao/politicas-contrat</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://angolacables.co.ao/politicas-contrat" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://angolacables.co.ao/politicas-contrat" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://angolacables.co.ao/politicas-contrat" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://angolacables.co.ao/politicas-contrat" />
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://angolacables.co.ao/politicas-id-dued</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://angolacables.co.ao/politicas-id-dued" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://angolacables.co.ao/politicas-id-dued" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://angolacables.co.ao/politicas-id-dued" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://angolacables.co.ao/politicas-id-dued" />
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://angolacables.co.ao/politicas-seginf</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://angolacables.co.ao/politicas-seginf" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://angolacables.co.ao/politicas-seginf" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://angolacables.co.ao/politicas-seginf" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://angolacables.co.ao/politicas-seginf" />
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://angolacables.co.ao/sgi</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://angolacables.co.ao/sgi" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://angolacables.co.ao/sgi" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://angolacables.co.ao/sgi" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://angolacables.co.ao/sgi" />
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://angolacables.co.ao/anti</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://angolacables.co.ao/anti" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://angolacables.co.ao/anti" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://angolacables.co.ao/anti" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://angolacables.co.ao/anti" />
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+</urlset>
+

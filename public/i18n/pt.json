@@ -837,5 +837,18 @@
   "trend_good": "Bom",
   "trend_positive": "Positivo",
   "trend_developing": "Em desenvolvimento",
-  "not_available": "N/D"
+  "not_available": "N/D",
+  "datacenter.subtitulo": "Data Centers",
+  "datacenter.espaco_hospedagem": "Espaço de Hospedagem",
+  "datacenter.angonap1_expansivel": "Expansível até 1000 racks",
+  "datacenter.angonap2_expansivel": "Expansível até 400 racks",
+  "datacenter.dimensao_racks": "Dimensão das Racks",
+  "datacenter.protecao_incendio": "Protecção contra incêndio",
+  "datacenter.angonap1_incendio": "Gás Novec e HSSD",
+  "datacenter.angonap2_incendio": "Gás FM 200 e HSSD",
+  "datacenter.angonap_title": "AngoNAP",
+  "datacenter.managed_services_title": "Managed Services",
+  "datacenter.gdi_title": "Global Data Center Interconnection",
+  "form_preencha_obrigatorios": "Por favor, preencha correctamente todos os campos obrigatórios.",
+  "menu-web-hosting-email": "Web Hosting & E-mail"
 }

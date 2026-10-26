@@ -68,12 +68,21 @@ jobs:
         env:
           NODE_OPTIONS: "--max_old_space_size=4096"
 
-      - name: 🐛 Verify Build Output
+      - name: 🐛 Verify Build Output & SEO Assets
         run: |
           echo "Build directory contents:"
           ls -la dist/part/browser
           echo "Checking for Firebase config in main.js:"
           grep -o "apiKey" dist/part/browser/main.js || echo "No API key found in build"
+
+          echo "🔍 Verifying XML Sitemap & Robots..."
+          test -f dist/part/browser/sitemap.xml || { echo "❌ ERROR: sitemap.xml missing in build output!"; exit 1; }
+          test -s dist/part/browser/sitemap.xml || { echo "❌ ERROR: sitemap.xml is empty!"; exit 1; }
+          echo "✅ sitemap.xml verified ($(wc -c < dist/part/browser/sitemap.xml) bytes)"
+
+          test -f dist/part/browser/robots.txt || { echo "❌ ERROR: robots.txt missing in build output!"; exit 1; }
+          test -s dist/part/browser/robots.txt || { echo "❌ ERROR: robots.txt is empty!"; exit 1; }
+          echo "✅ robots.txt verified ($(wc -c < dist/part/browser/robots.txt) bytes)"
 
       - name: 🧹 Secure Clean & Deploy via WebDAV
         env:
@@ -158,3 +167,5 @@ jobs:
 
           echo "🎉 Deployment completed successfully!"
           echo "🌐 Live at: https://angolacables.co.ao"
+          echo "🗺️ Sitemap: https://angolacables.co.ao/sitemap.xml"
+          echo "🤖 Robots: https://angolacables.co.ao/robots.txt"

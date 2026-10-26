@@ -834,5 +834,18 @@
   "trend_good": "Bon",
   "trend_positive": "Positif",
   "trend_developing": "En développement",
-  "not_available": "N/D"
+  "not_available": "N/D",
+  "datacenter.subtitulo": "Centres de Données",
+  "datacenter.espaco_hospedagem": "Espace d'Hébergement",
+  "datacenter.angonap1_expansivel": "Extensible jusqu'à 1000 racks",
+  "datacenter.angonap2_expansivel": "Extensible jusqu'à 400 racks",
+  "datacenter.dimensao_racks": "Dimensions des Racks",
+  "datacenter.protecao_incendio": "Protection contre les incendies",
+  "datacenter.angonap1_incendio": "Gaz Novec et HSSD",
+  "datacenter.angonap2_incendio": "Gaz FM 200 et HSSD",
+  "datacenter.angonap_title": "AngoNAP",
+  "datacenter.managed_services_title": "Services Gérés",
+  "datacenter.gdi_title": "Interconnexion Globale de Centres de Données",
+  "form_preencha_obrigatorios": "Veuillez remplir correctement tous les champs obligatoires.",
+  "menu-web-hosting-email": "Hébergement Web & E-mail"
 }
