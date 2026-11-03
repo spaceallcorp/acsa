@@ -9,6 +9,7 @@ import { TranslateLoader, provideTranslateService } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 
 import { environment } from '../environments/environment';
+import { resolveFirebaseConfig } from './services/firebase-config.helper';
 import { provideAuth } from "@angular/fire/auth";
 import { getAuth } from "firebase/auth";
 
@@ -41,7 +42,7 @@ export const appConfig: ApplicationConfig = {
                 redirect_uri: window.location.origin
             },
         }),
-        provideFirebaseApp(() => initializeApp(environment.firebase)),
+        provideFirebaseApp(() => initializeApp(resolveFirebaseConfig((environment as any).fbPayload ?? (environment as any).firebase))),
         provideAuth(() => getAuth()),
         provideFirestore(() => getFirestore())
     ],

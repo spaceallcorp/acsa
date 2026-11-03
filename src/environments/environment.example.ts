@@ -1,11 +1,15 @@
 export const environment = {
   production: true,
-  firebase: {
-    apiKey: "YOUR_PROD_API_KEY_HERE",
-    authDomain: "YOUR_PROD_AUTH_DOMAIN_HERE",
-    projectId: "YOUR_PROD_PROJECT_ID_HERE",
-    storageBucket: "YOUR_PROD_STORAGE_BUCKET_HERE",
-    messagingSenderId: "YOUR_PROD_MESSAGING_SENDER_ID_HERE",
-    appId: "YOUR_PROD_APP_ID_HERE"
+  fbPayload: {
+    _k: "BASE64_ENCODED_API_KEY",
+    _d: "BASE64_ENCODED_AUTH_DOMAIN",
+    _p: "BASE64_ENCODED_PROJECT_ID",
+    _b: "BASE64_ENCODED_STORAGE_BUCKET",
+    _m: "BASE64_ENCODED_MESSAGING_SENDER_ID",
+    _a: "BASE64_ENCODED_APP_ID"
+  },
+  auth0: {
+    domain: "YOUR_AUTH0_DOMAIN",
+    clientId: "YOUR_AUTH0_CLIENT_ID"
   }
 };
