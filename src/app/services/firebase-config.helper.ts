@@ -54,3 +54,4 @@ export function resolveFirebaseConfig(payload?: ObfuscatedFirebasePayload): Reco
 
   return resolved;
 }
+
