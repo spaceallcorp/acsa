@@ -19,6 +19,20 @@
     border-style: solid;
 }
 
+.single-event-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.single-event-card img {
+    margin: 0 auto;
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
 
 
 

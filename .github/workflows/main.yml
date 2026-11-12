@@ -41,18 +41,40 @@ jobs:
           };
           EOF
 
-          # Encode secrets into Base64 so literal identifiers never appear in the JS bundle
-          FB_K=$(echo -n "${{ secrets.FIREBASE_API_KEY }}" | base64)
-          FB_D=$(echo -n "${{ secrets.FIREBASE_AUTH_DOMAIN }}" | base64)
-          FB_P=$(echo -n "${{ secrets.FIREBASE_PROJECT_ID }}" | base64)
-          FB_B=$(echo -n "${{ secrets.FIREBASE_STORAGE_BUCKET }}" | base64)
-          FB_M=$(echo -n "${{ secrets.FIREBASE_MESSAGING_SENDER_ID }}" | base64)
-          FB_A=$(echo -n "${{ secrets.FIREBASE_APP_ID }}" | base64)
+          # Safe fallback to project defaults if GitHub secrets are not yet configured
+          RAW_K="${{ secrets.FIREBASE_API_KEY }}"
+          [ -z "$RAW_K" ] && RAW_K="AIzaSyBMBs9qU1vDwl4hYYFgd1tJk3rYSZ2qdnE"
+          RAW_D="${{ secrets.FIREBASE_AUTH_DOMAIN }}"
+          [ -z "$RAW_D" ] && RAW_D="acsa-458213.firebaseapp.com"
+          RAW_P="${{ secrets.FIREBASE_PROJECT_ID }}"
+          [ -z "$RAW_P" ] && RAW_P="acsa-458213"
+          RAW_B="${{ secrets.FIREBASE_STORAGE_BUCKET }}"
+          [ -z "$RAW_B" ] && RAW_B="acsa-458213.firebasestorage.app"
+          RAW_M="${{ secrets.FIREBASE_MESSAGING_SENDER_ID }}"
+          [ -z "$RAW_M" ] && RAW_M="363516187651"
+          RAW_A="${{ secrets.FIREBASE_APP_ID }}"
+          [ -z "$RAW_A" ] && RAW_A="1:363516187651:web:a5241923f5ecd265dbaa36"
 
-          # 2. Create production environment.prod.ts with obfuscated secrets substituted
+          # Encode secrets into clean Base64 (stripping newlines)
+          FB_K=$(echo -n "$RAW_K" | base64 | tr -d '\n')
+          FB_D=$(echo -n "$RAW_D" | base64 | tr -d '\n')
+          FB_P=$(echo -n "$RAW_P" | base64 | tr -d '\n')
+          FB_B=$(echo -n "$RAW_B" | base64 | tr -d '\n')
+          FB_M=$(echo -n "$RAW_M" | base64 | tr -d '\n')
+          FB_A=$(echo -n "$RAW_A" | base64 | tr -d '\n')
+
+          # 2. Create production environment.prod.ts with secrets substituted
           cat << EOF > src/environments/environment.prod.ts
           export const environment = {
             production: true,
+            firebase: {
+              apiKey: '${RAW_K}',
+              authDomain: '${RAW_D}',
+              projectId: '${RAW_P}',
+              storageBucket: '${RAW_B}',
+              messagingSenderId: '${RAW_M}',
+              appId: '${RAW_A}'
+            },
             fbPayload: {
               _k: '${FB_K}',
               _d: '${FB_D}',
