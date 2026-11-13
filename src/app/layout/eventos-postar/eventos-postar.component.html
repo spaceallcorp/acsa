@@ -7,6 +7,18 @@
     {{ errorMessage }}
   </div>
 
+  <!-- Target Collection -->
+  <div class="uk-margin-top uk-text-left">
+    <label for="targetCollection" class="uk-form-label">Destino / Colecção do Evento</label>
+    <div class="uk-form-controls">
+      <select id="targetCollection" [(ngModel)]="selectedCollection" class="uk-select" required>
+        <option *ngFor="let col of collections" [value]="col.value">
+          {{ col.label }}
+        </option>
+      </select>
+    </div>
+  </div>
+
   <!-- Title -->
   <div class="uk-margin-top uk-text-left">
     <label for="title" class="uk-form-label">Nome do evento</label>
@@ -40,7 +52,7 @@
   </div>
 
   <div class="uk-margin-top uk-text-left">
-    <label for="featuredImageUrl" class="uk-form-label">Organização:</label>
+    <label for="author" class="uk-form-label">Organização:</label>
     <div class="uk-form-controls">
       <input type="text" id="author" [(ngModel)]="newEvento.author" class="uk-input"
         placeholder="Nome da entidade organizador" />
@@ -65,3 +77,4 @@
     </button>
 
   </div>
+</div>

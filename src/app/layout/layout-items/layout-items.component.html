@@ -1,1 +1,806 @@
-<p>layout-items works!</p>
+<!-- layout-admin.component.html -->
+<div class="layout-admin-container">
+  <!-- Modern Header with Gradient -->
+
+
+  <!-- Toast Messages -->
+  <div class="toast-container">
+    <div *ngIf="successMessage" class="toast toast-success" (click)="clearMessages()">
+      <div class="toast-icon">✅</div>
+      <div class="toast-content">
+        <strong>Success!</strong>
+        <p>{{ successMessage }}</p>
+      </div>
+      <button class="toast-close">&times;</button>
+    </div>
+    <div *ngIf="errorMessage" class="toast toast-error" (click)="clearMessages()">
+      <div class="toast-icon">❌</div>
+      <div class="toast-content">
+        <strong>Error!</strong>
+        <p>{{ errorMessage }}</p>
+      </div>
+      <button class="toast-close">&times;</button>
+    </div>
+  </div>
+
+  <!-- Modern Loading Overlay -->
+  <div *ngIf="loading" class="loading-overlay">
+    <div class="loading-card">
+      <div class="modern-spinner"></div>
+      <p>Loading...</p>
+    </div>
+  </div>
+
+  <!-- Modern Tabs -->
+  <div class="tabs-modern">
+    <button *ngFor="let tab of tabs" [class.active]="activeTab === tab.id" (click)="setActiveTab(tab.id)"
+      class="tab-btn">
+      <span class="tab-icon">{{ tab.icon }}</span>
+      <span class="tab-label">{{ tab.label }}</span>
+      <span class="tab-indicator"></span>
+    </button>
+  </div>
+
+  <!-- Content Panels with Animations -->
+  <div class="content-panels">
+
+    <div *ngIf="activeTab === 'navbar'" class="panel fade-in">
+      <div class="panel-grid">
+
+        <div class="form-card card" id="navForm">
+          <div class="card-header">
+            <div class="card-icon">📁</div>
+            <h3>{{ editingNavId ? 'Edit Category & Links' : 'Create New Category' }}</h3>
+          </div>
+
+          <form [formGroup]="navForm" (ngSubmit)="onSubmitNav()">
+
+            <div class="form-group-modern">
+              <label>Category Title</label>
+              <div class="input-wrapper">
+                <span class="input-icon">📝</span>
+                <input class="uk-width-1-1" type="text" formControlName="title"
+                  placeholder="e.g., Connectivity, Cloud Services">
+              </div>
+              <div *ngIf="isFieldInvalid(navForm, 'title')" class="error-modern">
+                Title is required (minimum 2 characters)
+              </div>
+            </div>
+
+            <div class="form-group-modern">
+              <label>Base Link (Optional)</label>
+              <div class="input-wrapper">
+                <span class="input-icon">🔗</span>
+                <input class="uk-width-1-1" type="text" formControlName="link" placeholder="e.g., /connectivity">
+              </div>
+            </div>
+
+            <div class="form-group-modern">
+              <label>Display Order</label>
+              <div class="input-wrapper">
+                <span class="input-icon">🔢</span>
+                <input class="uk-width-1-1" type="number" formControlName="order" placeholder="1, 2, 3...">
+              </div>
+              <div *ngIf="isFieldInvalid(navForm, 'order')" class="error-modern">
+                Order is required (minimum 1)
+              </div>
+            </div>
+
+
+            <div class="sub-items-section" style="margin-top: 25px; border-top: 1px dashed #e0e0e0; padding-top: 20px;">
+
+
+              <div class="form-group-modern">
+                <label> Sub-links in this catergory</label>
+                <div class="input-wrapper">
+                  <button type="button" class="uk-button uk-border-rounded uk-button-small uk-button-primary"
+                    (click)="addSubItem()" style="display: flex; align-items: center; gap: 5px;">
+                    ➕ Add Sub-link
+                  </button>
+                </div>
+              </div>
+
+
+              <div formArrayName="items">
+                <div *ngFor="let subCtrl of subItemsFormArray.controls; let i = index" [formGroupName]="i"
+                  style="display: flex; gap: 10px; margin-bottom: 12px; align-items: center; background: #f8f9fa; padding: 12px; border-radius: 6px; border: 1px solid #eef0f2;">
+
+                  <div style="flex: 1;">
+                    <label style="font-size: 0.75rem; color: #666; display: block; margin-bottom: 4px;">Link
+                      Label</label>
+                    <input class="uk-input uk-form-small" type="text" formControlName="title"
+                      placeholder="e.g., IP Transit">
+                  </div>
+
+                  <div style="flex: 1;">
+                    <label style="font-size: 0.75rem; color: #666; display: block; margin-bottom: 4px;">URL
+                      Route</label>
+                    <input class="uk-input uk-form-small" type="text" formControlName="link"
+                      placeholder="e.g., /ip-transit">
+                  </div>
+
+                  <div style="padding-top: 20px;">
+                    <button type="button" class="action-btn delete-btn" (click)="removeSubItem(i)"
+                      title="Remove Sub-link"
+                      style="background-color: #ffebee; color: #d32f2f; border: none; padding: 6px 10px; border-radius: 4px; cursor: pointer;">
+                      🗑️
+                    </button>
+                  </div>
+                </div>
+
+                <div *ngIf="subItemsFormArray.length === 0" class="empty-state"
+                  style="padding: 15px; border: 1px dashed #ccc; border-radius: 6px; background: transparent;">
+                  <p style="margin: 0; font-size: 0.85rem; color: #999;">No sub-links added to this category yet.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-actions-modern" style="margin-top: 25px; border-top: 1px solid #eee; padding-top: 15px;">
+              <button type="submit" class="btn-primary" [disabled]="loading">
+                <span class="btn-icon">{{ editingNavId ? '🔄' : '➕' }}</span>
+                {{ editingNavId ? 'Update Category' : 'Create Category' }}
+              </button>
+              <button type="button" *ngIf="editingNavId" (click)="resetNavForm()" class="btn-secondary">
+                Cancel
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div class="list-card card">
+          <div class="card-header">
+            <h3>Navbar Architecture ({{ (navItems$ | async)?.length || 0 }} Categories)</h3>
+          </div>
+          <div class="items-container">
+
+            <div *ngIf="(navItems$ | async)?.length === 0" class="empty-state">
+              <div class="empty-icon">📭</div>
+              <p>No navigation architecture defined yet</p>
+              <small>Create your first structural category using the form on the left</small>
+            </div>
+
+            <div *ngFor="let category of navItems$ | async" class="item-card-modern"
+              style="flex-direction: column; align-items: flex-start; gap: 12px; padding: 16px;">
+
+              <div class="item-content"
+                style="width: 100%; display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                  <div class="item-title" style="font-weight: 700; font-size: 1.1rem; color: #111;">
+                    {{ category.title }}
+                    <span class="badge"
+                      style="font-size: 0.75rem; background: #f0f1f3; color: #555; font-weight: 500; margin-left: 6px;">Order:
+                      {{ category.order }}</span>
+                  </div>
+                  <div class="item-meta" style="margin-top: 4px;" *ngIf="category.link">
+                    <span class="badge badge-link"
+                      style="font-family: monospace; background: #e8f5e9; color: #2e7d32;">Base URL: {{ category.link
+                      }}</span>
+                  </div>
+                </div>
+
+                <div class="item-actions-modern">
+                  <button (click)="editNavItem(category)" class="action-btn edit-btn"
+                    title="Edit Category Architecture">
+                    ✏️
+                  </button>
+                  <button (click)="deleteNavItem(category.id)" class="action-btn delete-btn"
+                    title="Delete Category & Sub-links">
+                    🗑️
+                  </button>
+                </div>
+              </div>
+
+              <div class="sub-items-tree"
+                style="width: 100%; padding-left: 15px; border-left: 3px solid #666; margin-top: 4px; display: flex; flex-direction: column; gap: 6px;">
+                <div *ngFor="let sub of category.items"
+                  style="display: flex; align-items: center; gap: 8px; font-size: 0.9rem;">
+                  <span style="color: #777;">↳</span>
+                  <span style="font-weight: 600; color: #333;">{{ sub.title }}</span>
+                  <span class="badge badge-link"
+                    style="font-family: monospace; font-size: 0.8rem; background: #f4f5f7; color: #666;">{{ sub.link
+                    }}</span>
+                </div>
+
+                <div *ngIf="!category.items || category.items.length === 0"
+                  style="font-size: 0.85rem; color: #999; font-style: italic; padding-left: 12px;">
+                  No sub-links inside this column.
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- ==================== FOOTER TAB ==================== -->
+    <div *ngIf="activeTab === 'footer'" class="panel fade-in">
+      <div class="panel-grid">
+        <div class="form-card card">
+          <div class="card-header">
+            <div class="card-icon">➕</div>
+            <h3>{{ editingFooterId ? 'Edit Footer Item' : 'Create New Footer Item' }}</h3>
+          </div>
+          <form [formGroup]="footerForm" (ngSubmit)="onSubmitFooter()">
+            <div class="form-group-modern">
+              <label>Title</label>
+              <div class="input-wrapper">
+                <span class="input-icon">📄</span>
+                <input class="uk-width-1-2" type="text" formControlName="title"
+                  placeholder="e.g., Privacy Policy, Terms of Use">
+              </div>
+              <div *ngIf="isFieldInvalid(footerForm, 'title')" class="error-modern">
+                Title is required (minimum 2 characters)
+              </div>
+            </div>
+
+            <div class="form-group-modern">
+              <label>Link</label>
+              <div class="input-wrapper">
+                <span class="input-icon">🔗</span>
+                <input class="uk-width-1-2" type="text" formControlName="link" placeholder="e.g., /privacy, /terms">
+              </div>
+              <div *ngIf="isFieldInvalid(footerForm, 'link')" class="error-modern">
+                Link is required
+              </div>
+            </div>
+
+            <div class="form-actions-modern">
+              <button type="submit" class="btn-primary" [disabled]="loading">
+                <span class="btn-icon">{{ editingFooterId ? '🔄' : '➕' }}</span>
+                {{ editingFooterId ? 'Update Item' : 'Add Item' }}
+              </button>
+              <button type="button" *ngIf="editingFooterId" (click)="resetFooterForm()" class="btn-secondary">
+                Cancel
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div class="list-card card">
+          <div class="card-header">
+            <h3>Footer Items ({{ (footerItems$ | async)?.length || 0 }})</h3>
+          </div>
+          <div class="items-container">
+            <div *ngIf="(footerItems$ | async)?.length === 0" class="empty-state">
+              <div class="empty-icon">📭</div>
+              <p>No footer items yet</p>
+              <small>Add your first footer item using the form</small>
+            </div>
+            <div *ngFor="let item of footerItems$ | async" class="item-card-modern">
+              <div class="item-content">
+                <div class="item-title">{{ item.title }}</div>
+                <div class="item-meta">
+                  <span class="badge badge-link">{{ item.link }}</span>
+                </div>
+              </div>
+              <div class="item-actions-modern">
+                <button (click)="editFooterItem(item)" class="action-btn edit-btn" title="Edit">
+                  ✏️
+                </button>
+                <button (click)="deleteFooterItem(item.id)" class="action-btn delete-btn" title="Delete">
+                  🗑️
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== SITE LOGOS TAB ==================== -->
+    <div *ngIf="activeTab === 'logos'" class="panel fade-in">
+      <div class="panel-grid">
+        <div class="form-card card">
+          <div class="card-header">
+            <h3>{{ editingLogosId ? 'Edit Site Logos' : 'Add Site Logos' }}</h3>
+          </div>
+          <form [formGroup]="logosForm" (ngSubmit)="onSubmitLogos()">
+            <div class="form-group-modern">
+              <label>Navbar Logo URL</label>
+              <div class="input-wrapper">
+                <span class="input-icon">🏢</span>
+                <input class="uk-width-1-2" type="url" formControlName="navbarLogoUrl"
+                  placeholder="/assets/logos/navbar-logo.png">
+              </div>
+              <div *ngIf="isFieldInvalid(logosForm, 'navbarLogoUrl')" class="error-modern">
+                Navbar logo URL is required
+              </div>
+            </div>
+
+            <div class="form-group-modern">
+              <label>Footer Logo URL</label>
+              <div class="input-wrapper">
+                <span class="input-icon">🏷️</span>
+                <input class="uk-width-1-2" type="url" formControlName="footerLogoUrl"
+                  placeholder="/assets/logos/footer-logo.png">
+              </div>
+              <div *ngIf="isFieldInvalid(logosForm, 'footerLogoUrl')" class="error-modern">
+                Footer logo URL is required
+              </div>
+            </div>
+
+            <div class="form-group-modern">
+              <label>Mobile Logo URL</label>
+              <div class="input-wrapper">
+                <span class="input-icon">📱</span>
+                <input class="uk-width-1-2" type="url" formControlName="mobileLogoUrl"
+                  placeholder="/assets/logos/mobile-logo.png">
+              </div>
+              <div *ngIf="isFieldInvalid(logosForm, 'mobileLogoUrl')" class="error-modern">
+                Mobile logo URL is required
+              </div>
+            </div>
+
+            <div class="form-actions-modern">
+              <button type="submit" class="btn-primary" [disabled]="loading">
+                <span class="btn-icon">{{ editingLogosId ? '🔄' : '💾' }}</span>
+                {{ editingLogosId ? 'Update Logos' : 'Save Logos' }}
+              </button>
+              <button type="button" *ngIf="editingLogosId" (click)="resetLogosForm()" class="btn-secondary">
+                Cancel
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div class="list-card card">
+          <div class="card-header">
+            <div class="card-icon">🎨</div>
+            <h3>Site Logos ({{ (siteLogos$ | async)?.length || 0 }})</h3>
+          </div>
+          <div class="items-container">
+            <div *ngIf="(siteLogos$ | async)?.length === 0" class="empty-state">
+              <div class="empty-icon">🎨</div>
+              <p>No logos configured yet</p>
+              <small>Add your website logos using the form</small>
+            </div>
+            <div *ngFor="let item of siteLogos$ | async" class="logo-card-modern">
+              <div class="logo-preview-grid">
+                <div class="logo-preview-item">
+                  <span class="preview-label">Navbar Logo</span>
+                  <img [src]="item.navbarLogoUrl" class="logo-img" alt="Navbar Logo">
+                </div>
+                <div class="logo-preview-item">
+                  <span class="preview-label">Footer Logo</span>
+                  <img [src]="item.footerLogoUrl" class="logo-img" alt="Footer Logo">
+                </div>
+                <div class="logo-preview-item">
+                  <span class="preview-label">Mobile Logo</span>
+                  <img [src]="item.mobileLogoUrl" class="logo-img" alt="Mobile Logo">
+                </div>
+              </div>
+              <div class="item-actions-modern">
+                <button (click)="editLogosItem(item)" class="action-btn edit-btn" title="Edit">
+                  ✏️
+                </button>
+                <button (click)="deleteLogosItem(item.id)" class="action-btn delete-btn" title="Delete">
+                  🗑️
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== SOCIAL MEDIA TAB ==================== -->
+    <div *ngIf="activeTab === 'social'" class="panel fade-in">
+      <div class="panel-grid">
+        <div class="form-card card">
+          <div class="card-header">
+            <div class="card-icon">📱</div>
+            <h3>{{ editingSocialId ? 'Edit Social Media' : 'Add Social Media' }}</h3>
+          </div>
+          <form [formGroup]="socialForm" (ngSubmit)="onSubmitSocial()">
+            <div class="form-group-modern">
+              <label>Platform</label>
+              <div class="input-wrapper">
+                <span class="input-icon">🌐</span>
+                <input class="uk-width-1-2" type="text" formControlName="title"
+                  placeholder="e.g., Facebook, Twitter, Instagram">
+              </div>
+              <div *ngIf="isFieldInvalid(socialForm, 'title')" class="error-modern">
+                Platform name is required
+              </div>
+            </div>
+
+            <div class="form-group-modern">
+              <label>Profile URL</label>
+              <div class="input-wrapper">
+                <span class="input-icon">🔗</span>
+                <input class="uk-width-1-2" type="url" formControlName="link"
+                  placeholder="https://facebook.com/yourpage">
+              </div>
+              <div *ngIf="isFieldInvalid(socialForm, 'link')" class="error-modern">
+                Valid URL is required (must start with http:// or https://)
+              </div>
+            </div>
+
+            <div class="form-actions-modern">
+              <button type="submit" class="btn-primary" [disabled]="loading">
+                <span class="btn-icon">{{ editingSocialId ? '🔄' : '➕' }}</span>
+                {{ editingSocialId ? 'Update Social Media' : 'Add Social Media' }}
+              </button>
+              <button type="button" *ngIf="editingSocialId" (click)="resetSocialForm()" class="btn-secondary">
+                Cancel
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div class="list-card card">
+          <div class="card-header">
+            <h3>Social Media ({{ (socialMedia$ | async)?.length || 0 }})</h3>
+          </div>
+          <div class="items-container">
+            <div *ngIf="(socialMedia$ | async)?.length === 0" class="empty-state">
+              <div class="empty-icon">📱</div>
+              <p>No social media links yet</p>
+              <small>Add your social media profiles</small>
+            </div>
+            <div *ngFor="let item of socialMedia$ | async" class="item-card-modern">
+              <div class="item-content">
+                <div class="item-title">
+                  <span class="social-icon" [class]="'social-' + item.title.toLowerCase()">
+                    {{ getSocialIcon(item.title) }}
+                  </span>
+                  {{ item.title }}
+                </div>
+                <div class="item-meta">
+                  <a [href]="item.link" target="_blank" class="social-link">{{ item.link }}</a>
+                </div>
+              </div>
+              <div class="item-actions-modern">
+                <button (click)="editSocialItem(item)" class="action-btn edit-btn" title="Edit">
+                  ✏️
+                </button>
+                <button (click)="deleteSocialItem(item.id)" class="action-btn delete-btn" title="Delete">
+                  🗑️
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== ADDRESSES TAB ==================== -->
+    <div *ngIf="activeTab === 'addresses'" class="panel fade-in">
+      <div class="panel-grid">
+        <div class="form-card card">
+          <div class="card-header">
+            <h3>{{ editingAddressId ? 'Edit Address' : 'Add New Address' }}</h3>
+          </div>
+          <form [formGroup]="addressesForm" (ngSubmit)="onSubmitAddress()">
+            <div class="form-group-modern">
+              <label>Title</label>
+              <div class="input-wrapper">
+                <span class="input-icon">🏷️</span>
+                <input class="uk-width-1-2" type="text" formControlName="title"
+                  placeholder="e.g., Main Office, Support Center">
+              </div>
+              <div *ngIf="isFieldInvalid(addressesForm, 'title')" class="error-modern">
+                Title is required
+              </div>
+            </div>
+
+            <div class="form-group-modern">
+              <label>Address</label>
+              <div class="input-wrapper">
+                <span class="input-icon">📍</span>
+                <textarea class="uk-width-1-2" formControlName="addressName" rows="3"
+                  placeholder="Full address"></textarea>
+              </div>
+              <div *ngIf="isFieldInvalid(addressesForm, 'addressName')" class="error-modern">
+                Address is required
+              </div>
+            </div>
+
+            <div class="form-group-modern">
+              <label>Phone (optional)</label>
+              <div class="input-wrapper">
+                <span class="input-icon">📞</span>
+                <input class="uk-width-1-2" type="tel" formControlName="phone" placeholder="+55 11 99999-9999">
+              </div>
+            </div>
+
+            <div class="form-group-modern">
+              <label>Contact Email</label>
+              <div class="input-wrapper">
+                <span class="input-icon">✉️</span>
+                <input class="uk-width-1-2" type="email" formControlName="contactEmail"
+                  placeholder="contact@company.com">
+              </div>
+              <div *ngIf="isFieldInvalid(addressesForm, 'contactEmail')" class="error-modern">
+                Valid email is required
+              </div>
+            </div>
+
+            <div class="form-actions-modern">
+              <button type="submit" class="btn-primary" [disabled]="loading">
+                <span class="btn-icon">{{ editingAddressId ? '🔄' : '➕' }}</span>
+                {{ editingAddressId ? 'Update Address' : 'Add Address' }}
+              </button>
+              <button type="button" *ngIf="editingAddressId" (click)="resetAddressForm()" class="btn-secondary">
+                Cancel
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div class="list-card card">
+          <div class="card-header">
+            <div class="card-icon">🏢</div>
+            <h3>Addresses ({{ (addresses$ | async)?.length || 0 }})</h3>
+          </div>
+          <div class="items-container">
+            <div *ngIf="(addresses$ | async)?.length === 0" class="empty-state">
+              <div class="empty-icon">📍</div>
+              <p>No addresses added yet</p>
+              <small>Add your office or support addresses</small>
+            </div>
+            <div *ngFor="let item of addresses$ | async" class="address-card-modern">
+              <div class="address-header">
+                <span class="address-icon">📍</span>
+                <h4>{{ item.title }}</h4>
+              </div>
+              <div class="address-details">
+                <p>{{ item.addressName }}</p>
+                <p *ngIf="item.phone"><span class="detail-icon">📞</span> {{ item.phone }}</p>
+                <p><span class="detail-icon">✉️</span> {{ item.contactEmail }}</p>
+              </div>
+              <div class="item-actions-modern">
+                <button (click)="editAddressItem(item)" class="action-btn edit-btn" title="Edit">
+                  ✏️
+                </button>
+                <button (click)="deleteAddressItem(item.id)" class="action-btn delete-btn" title="Delete">
+                  🗑️
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== PARTNERS TAB ==================== -->
+    <div *ngIf="activeTab === 'partners'" class="panel fade-in">
+      <div class="panel-grid">
+        <div class="form-card card">
+          <div class="card-header">
+            <div class="card-icon">🤝</div>
+            <h3>{{ editingPartnerId ? 'Edit Partner' : 'Add New Partner' }}</h3>
+          </div>
+          <form [formGroup]="partnersForm" (ngSubmit)="onSubmitPartner()">
+            <div class="form-group-modern">
+              <label>Partner Logo URL</label>
+              <div class="input-wrapper">
+                <span class="input-icon">🖼️</span>
+                <input class="uk-width-1-2" type="url" formControlName="partnersLogo"
+                  placeholder="/assets/partners/partner-logo.png">
+              </div>
+              <div *ngIf="isFieldInvalid(partnersForm, 'partnersLogo')" class="error-modern">
+                Partner logo URL is required
+              </div>
+              <img *ngIf="partnersForm.get('partnersLogo')?.value" [src]="partnersForm.get('partnersLogo')?.value"
+                class="preview-image-modern">
+            </div>
+
+            <div class="form-group-modern">
+              <label>Partner Website URL</label>
+              <div class="input-wrapper">
+                <span class="input-icon">🔗</span>
+                <input class="uk-width-1-2" type="url" formControlName="partnerUrl" placeholder="https://partner.com">
+              </div>
+              <div *ngIf="isFieldInvalid(partnersForm, 'partnerUrl')" class="error-modern">
+                Valid URL is required
+              </div>
+            </div>
+
+            <div class="form-actions-modern">
+              <button type="submit" class="btn-primary" [disabled]="loading">
+                <span class="btn-icon">{{ editingPartnerId ? '🔄' : '🤝' }}</span>
+                {{ editingPartnerId ? 'Update Partner' : 'Add Partner' }}
+              </button>
+              <button type="button" *ngIf="editingPartnerId" (click)="resetPartnerForm()" class="btn-secondary">
+                Cancel
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div class="list-card card">
+          <div class="card-header">
+            <div class="card-icon">🤝</div>
+            <h3>Partners ({{ (partners$ | async)?.length || 0 }})</h3>
+          </div>
+          <div class="partners-grid-modern">
+            <div *ngIf="(partners$ | async)?.length === 0" class="empty-state full-width">
+              <div class="empty-icon">🤝</div>
+              <p>No partners added yet</p>
+              <small>Add your business partners</small>
+            </div>
+            <div *ngFor="let item of partners$ | async; let i = index" class="partner-card-modern">
+              <div class="partner-logo-wrapper">
+                <img [src]="item.partnersLogo" [alt]="'Partner ' + (i+1)" class="partner-logo-modern">
+              </div>
+              <a [href]="item.partnerUrl" target="_blank" class="partner-link-modern">
+                Visit Website <span>→</span>
+              </a>
+              <div class="item-actions-modern">
+                <button (click)="editPartnerItem(item)" class="action-btn edit-btn" title="Edit">
+                  ✏️
+                </button>
+                <button (click)="deletePartnerItem(item.id || i.toString())" class="action-btn delete-btn"
+                  title="Delete">
+                  🗑️
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== HERO SLIDER TAB ==================== -->
+    <div *ngIf="activeTab === 'hero'" class="panel fade-in">
+      <div class="panel-grid">
+        <div class="form-card card">
+          <div class="card-header">
+            <h3>{{ editingHeroId ? 'Edit Hero Slide' : 'Add New Hero Slide' }}</h3>
+          </div>
+          <form [formGroup]="heroForm" (ngSubmit)="onSubmitHero()">
+            
+            <div style="background: rgba(0,0,0,0.02); padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+              <h4 style="margin-top: 0; margin-bottom: 10px; color: #444;">Slide Media Assets</h4>
+              
+              <!-- Fallback Image -->
+              <div class="form-group-modern">
+                <label>Fallback Image / Video Poster URL</label>
+                <div class="input-wrapper">
+                  <span class="input-icon">🖼️</span>
+                  <input class="uk-width-1-2" type="url" formControlName="imageUrl" placeholder="/assets/hero/slide-fallback.jpg">
+                </div>
+                <div *ngIf="isFieldInvalid(heroForm, 'imageUrl')" class="error-modern">
+                  Fallback image URL is required (used while video loads or as a backup).
+                </div>
+                <img *ngIf="heroForm.get('imageUrl')?.value" [src]="heroForm.get('imageUrl')?.value"
+                  class="preview-image-modern hero-preview-modern" style="max-height: 100px; margin-top: 5px;">
+              </div>
+
+              <!-- Background Video -->
+              <div class="form-group-modern" style="margin-top: 15px;">
+                <label>Background Video URL (MP4)</label>
+                <div class="input-wrapper">
+                  <span class="input-icon">🎥</span>
+                  <input class="uk-width-1-1" type="url" formControlName="videoUrl" placeholder="https://domain.com/video.mp4">
+                </div>
+                <small style="color: #888; font-size: 11px;">Opcional: Se preenchido, substitui a imagem de fundo com este vídeo em loop.</small>
+              </div>
+
+              <!-- NEW: Upcoming Event Image & Link -->
+              <div class="form-group-modern" style="margin-top: 15px; border-top: 1px dashed #ccc; padding-top: 15px;">
+                <label>Upcoming Event Image URL</label>
+                <div class="input-wrapper">
+                  <span class="input-icon">📅</span>
+                  <input class="uk-width-1-1" type="url" formControlName="upEventImageUrl" placeholder="https://domain.com/event-banner.jpg">
+                </div>
+                <small style="color: #888; font-size: 11px;">Opcional: Imagem do evento a exibir no slide.</small>
+
+                <div *ngIf="heroForm.get('upEventImageUrl')?.value" style="margin-top: 5px;">
+                  <img [src]="heroForm.get('upEventImageUrl')?.value" class="preview-image-modern hero-preview-modern" style="max-height: 100px; border-radius: 4px;">
+                </div>
+
+                <label style="margin-top: 10px; display: block;">Upcoming Event Link / URL</label>
+                <div class="input-wrapper">
+                  <span class="input-icon">🔗</span>
+                  <input class="uk-width-1-1" type="url" formControlName="upEventUrl" placeholder="https://domain.com/events/upcoming-event">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group-modern">
+              <label>Title</label>
+              <div class="input-wrapper">
+                <span class="input-icon">📝</span>
+                <input class="uk-width-1-2" type="text" formControlName="title" placeholder="Main title">
+              </div>
+              <div *ngIf="isFieldInvalid(heroForm, 'title')" class="error-modern">
+                Title is required
+              </div>
+            </div>
+
+            <div class="form-group-modern">
+              <label>Subtitle</label>
+              <div class="input-wrapper">
+                <span class="input-icon">📄</span>
+                <input class="uk-width-1-2" type="text" formControlName="subtitle" placeholder="Subtitle text">
+              </div>
+              <div *ngIf="isFieldInvalid(heroForm, 'subtitle')" class="error-modern">
+                Subtitle is required
+              </div>
+            </div>
+
+            <div class="form-row-modern">
+              <div class="form-group-modern">
+                <label>Button 1 Text</label>
+                <div class="input-wrapper">
+                  <span class="input-icon">🔘</span>
+                  <input class="uk-width-1-2" type="text" formControlName="ctaBtnText" placeholder="Learn More">
+                </div>
+                <div *ngIf="isFieldInvalid(heroForm, 'ctaBtnText')" class="error-modern">Required</div>
+                
+                <label style="margin-top: 5px; display:block;">Button 1 URL</label>
+                <div class="input-wrapper">
+                  <span class="input-icon">🔗</span>
+                  <input class="uk-width-1-2" type="text" formControlName="ctaUrl" placeholder="/about">
+                </div>
+                <div *ngIf="isFieldInvalid(heroForm, 'ctaUrl')" class="error-modern">Required</div>
+              </div>
+            </div>
+
+            <div class="form-row-modern" style="margin-top: 10px;">
+              <div class="form-group-modern">
+                <label>Button 2 Text</label>
+                <div class="input-wrapper">
+                  <span class="input-icon">🔘</span>
+                  <input class="uk-width-1-2" type="text" formControlName="ctaBtn2Text" placeholder="Contact Us">
+                </div>
+                <div *ngIf="isFieldInvalid(heroForm, 'ctaBtn2Text')" class="error-modern">Required</div>
+                
+                <label style="margin-top: 5px; display:block;">Button 2 URL</label>
+                <div class="input-wrapper">
+                  <span class="input-icon">🔗</span>
+                  <input class="uk-width-1-2" type="text" formControlName="cta2Url" placeholder="/contact">
+                </div>
+                <div *ngIf="isFieldInvalid(heroForm, 'cta2Url')" class="error-modern">Required</div>
+              </div>
+            </div>
+
+            <div class="form-actions-modern" style="margin-top: 20px;">
+              <button type="submit" class="btn-primary" [disabled]="loading">
+                <span class="btn-icon">{{ editingHeroId ? '🔄' : '➕' }}</span>
+                {{ editingHeroId ? 'Update Slide' : 'Add Slide' }}
+              </button>
+              <button type="button" *ngIf="editingHeroId" (click)="resetHeroForm()" class="btn-secondary">
+                Cancel
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div class="list-card card">
+          <div class="card-header">
+            <h3>Hero Slides ({{ (heroSlides$ | async)?.length || 0 }})</h3>
+          </div>
+          <div class="hero-slides-modern">
+            <div *ngIf="(heroSlides$ | async)?.length === 0" class="empty-state">
+              <p>No hero slides yet</p>
+              <small>Add slides for your hero slider</small>
+            </div>
+            <div *ngFor="let item of heroSlides$ | async" class="hero-slide-modern">
+              <div class="slide-preview">
+                <img [src]="item.imageUrl" [alt]="item.title" class="slide-image">
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                  <h4>{{ item.title }}</h4>
+                  <p>{{ item.subtitle }}</p>
+                  <div class="slide-buttons">
+                    <span class="slide-btn">{{ item.ctaBtnText }}</span>
+                    <span class="slide-btn secondary">{{ item.ctaBtn2Text }}</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item-actions-modern">
+                <button (click)="editHeroItem(item)" class="action-btn edit-btn" title="Edit">✏️</button>
+                <button (click)="deleteHeroItem(item.id)" class="action-btn delete-btn" title="Delete">🗑️</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+   </div>
+</div>

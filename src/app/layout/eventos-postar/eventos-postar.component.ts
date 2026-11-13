@@ -4,6 +4,7 @@ import { Firestore, addDoc, collection, serverTimestamp } from '@angular/fire/fi
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { EditorModule } from '@tinymce/tinymce-angular';
+import { EVENTO_COLLECTIONS, EventoCollection } from '../../models/evento.models';
 
 @Component({
   selector: 'app-eventos-postar',
@@ -12,6 +13,10 @@ import { EditorModule } from '@tinymce/tinymce-angular';
   styleUrl: './eventos-postar.component.css'
 })
 export class EventosPostarComponent {
+
+  // Available target collections
+  collections = EVENTO_COLLECTIONS;
+  selectedCollection: EventoCollection = 'eventos';
 
   // Data models
   editorContent: string = '';
@@ -54,6 +59,11 @@ export class EventosPostarComponent {
       return;
     }
 
+    if (!this.selectedCollection) {
+      this.errorMessage = 'Seleccione o destino (colecção) do evento.';
+      return;
+    }
+
     /*
     if (!this.editorContent.trim()) {
       this.errorMessage = 'O conteúdo é obrigatório.';
@@ -63,25 +73,29 @@ export class EventosPostarComponent {
     this.isSubmitting = true;
 
     try {
-      const eventosCollection = collection(this.firestore, 'eventos');
+      const eventosCollection = collection(this.firestore, this.selectedCollection);
       await addDoc(eventosCollection, {
         title: this.newEvento.title,
         content: this.editorContent,
         author: this.newEvento.author,
         imageUrl: this.featuredImageUrl || null,
         eventoUrl: this.eventoUrl || null,
+        collection: this.selectedCollection,
         createdAt: serverTimestamp(),
         updatedAt: serverTimestamp()
       });
 
       // Reset form
       this.newEvento.title = '';
+      this.newEvento.author = '';
+      this.eventoUrl = '';
       this.editorContent = '';
       this.featuredImageUrl = '';
+      this.selectedCollection = 'eventos';
       this.router.navigate(['/']);
 
     } catch (error) {
-      console.error('Erro ao salvar o artigo:', error);
+      console.error('Erro ao salvar o evento:', error);
       this.errorMessage = this.getFirestoreError(error);
     } finally {
       this.isSubmitting = false;
