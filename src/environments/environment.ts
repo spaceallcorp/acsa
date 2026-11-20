@@ -1,13 +1,5 @@
 export const environment = {
   production: false,
-  firebase: {
-    apiKey: 'AIzaSyBMBs9qU1vDwl4hYYFgd1tJk3rYSZ2qdnE',
-    authDomain: 'acsa-458213.firebaseapp.com',
-    projectId: 'acsa-458213',
-    storageBucket: 'acsa-458213.firebasestorage.app',
-    messagingSenderId: '363516187651',
-    appId: '1:363516187651:web:a5241923f5ecd265dbaa36'
-  },
   fbPayload: {
     _k: 'QUl6YVN5Qk1CczlxVTF2RHdsNGhZWUZnZDF0SmszcllTWjJxZG5F',
     _d: 'YWNzYS00NTgyMTMuZmlyZWJhc2VhcHAuY29t',
@@ -15,6 +7,26 @@ export const environment = {
     _b: 'YWNzYS00NTgyMTMuZmlyZWJhc2VzdG9yYWdlLmFwcA==',
     _m: 'MzYzNTE2MTg3NjUx',
     _a: 'MTozNjM1MTYxODc2NTE6d2ViOmE1MjQxOTIzZjVlY2QyNjVkYmFhMzY='
+  },
+  tinymce: {
+    apiKey: 'a8yzw2uhdu7v6niumnokr811bginwp5kfr689ismxj4dtnxu'
+  },
+  emailjs: {
+    contacto: {
+      serviceId: 'service_9il6xco',
+      templateId: 'template_xzxuf3r',
+      publicKey: 'F-p5Ny3ufMaRfCSgR'
+    },
+    vagas: {
+      serviceId: 'service_yhmv9kn',
+      templateId: 'template_5cejkm2',
+      publicKey: 's3ApW9433DP5gZtVb'
+    },
+    signup: {
+      serviceId: 'service_hxge11t',
+      templateId: 'template_52yj2o5',
+      publicKey: '8zvRzqg96H44z9txo'
+    }
   },
   auth0: {
     domain: '',

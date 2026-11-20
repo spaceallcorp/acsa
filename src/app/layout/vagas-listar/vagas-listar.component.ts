@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { VagaService } from '../../services/vaga.service';
 import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
+import { environment } from '../../../environments/environment';
 
 import { AsyncPipe, CommonModule } from '@angular/common';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
@@ -58,9 +59,14 @@ export class VagasListarComponent {
       //to_email: this.selectedVaga?.emailDepartamento  // Depois activar esta opção para selecção automática do email do departamento a partir da vaga selecionada
     };
 
-    emailjs.send('service_yhmv9kn', 'template_5cejkm2', formData, {
-      publicKey: 's3ApW9433DP5gZtVb'
-    })
+    emailjs.send(
+      environment.emailjs.vagas.serviceId,
+      environment.emailjs.vagas.templateId,
+      formData,
+      {
+        publicKey: environment.emailjs.vagas.publicKey
+      }
+    )
       .then(() => {
         console.log('SUCESSO');
         window.alert('Mensagem enviada com sucesso! 🎉');

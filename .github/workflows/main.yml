@@ -34,6 +34,14 @@ jobs:
               _m: '',
               _a: ''
             },
+            tinymce: {
+              apiKey: ''
+            },
+            emailjs: {
+              contacto: { serviceId: '', templateId: '', publicKey: '' },
+              vagas: { serviceId: '', templateId: '', publicKey: '' },
+              signup: { serviceId: '', templateId: '', publicKey: '' }
+            },
             auth0: {
               domain: '',
               clientId: ''
@@ -41,19 +49,13 @@ jobs:
           };
           EOF
 
-          # Safe fallback to project defaults if GitHub secrets are not yet configured
+          # Secrets from GitHub Repository Secrets
           RAW_K="${{ secrets.FIREBASE_API_KEY }}"
-          [ -z "$RAW_K" ] && RAW_K="AIzaSyBMBs9qU1vDwl4hYYFgd1tJk3rYSZ2qdnE"
           RAW_D="${{ secrets.FIREBASE_AUTH_DOMAIN }}"
-          [ -z "$RAW_D" ] && RAW_D="acsa-458213.firebaseapp.com"
           RAW_P="${{ secrets.FIREBASE_PROJECT_ID }}"
-          [ -z "$RAW_P" ] && RAW_P="acsa-458213"
           RAW_B="${{ secrets.FIREBASE_STORAGE_BUCKET }}"
-          [ -z "$RAW_B" ] && RAW_B="acsa-458213.firebasestorage.app"
           RAW_M="${{ secrets.FIREBASE_MESSAGING_SENDER_ID }}"
-          [ -z "$RAW_M" ] && RAW_M="363516187651"
           RAW_A="${{ secrets.FIREBASE_APP_ID }}"
-          [ -z "$RAW_A" ] && RAW_A="1:363516187651:web:a5241923f5ecd265dbaa36"
 
           # Encode secrets into clean Base64 (stripping newlines)
           FB_K=$(echo -n "$RAW_K" | base64 | tr -d '\n')
@@ -63,18 +65,34 @@ jobs:
           FB_M=$(echo -n "$RAW_M" | base64 | tr -d '\n')
           FB_A=$(echo -n "$RAW_A" | base64 | tr -d '\n')
 
-          # 2. Create production environment.prod.ts with secrets substituted
+          TINYMCE_KEY="${{ secrets.TINYMCE_API_KEY }}"
+          [ -z "$TINYMCE_KEY" ] && TINYMCE_KEY="a8yzw2uhdu7v6niumnokr811bginwp5kfr689ismxj4dtnxu"
+
+          EJ_C_SRV="${{ secrets.EMAILJS_CONTACTO_SERVICE_ID }}"
+          [ -z "$EJ_C_SRV" ] && EJ_C_SRV="service_9il6xco"
+          EJ_C_TMP="${{ secrets.EMAILJS_CONTACTO_TEMPLATE_ID }}"
+          [ -z "$EJ_C_TMP" ] && EJ_C_TMP="template_xzxuf3r"
+          EJ_C_PUB="${{ secrets.EMAILJS_CONTACTO_PUBLIC_KEY }}"
+          [ -z "$EJ_C_PUB" ] && EJ_C_PUB="F-p5Ny3ufMaRfCSgR"
+
+          EJ_V_SRV="${{ secrets.EMAILJS_VAGAS_SERVICE_ID }}"
+          [ -z "$EJ_V_SRV" ] && EJ_V_SRV="service_yhmv9kn"
+          EJ_V_TMP="${{ secrets.EMAILJS_VAGAS_TEMPLATE_ID }}"
+          [ -z "$EJ_V_TMP" ] && EJ_V_TMP="template_5cejkm2"
+          EJ_V_PUB="${{ secrets.EMAILJS_VAGAS_PUBLIC_KEY }}"
+          [ -z "$EJ_V_PUB" ] && EJ_V_PUB="s3ApW9433DP5gZtVb"
+
+          EJ_S_SRV="${{ secrets.EMAILJS_SIGNUP_SERVICE_ID }}"
+          [ -z "$EJ_S_SRV" ] && EJ_S_SRV="service_hxge11t"
+          EJ_S_TMP="${{ secrets.EMAILJS_SIGNUP_TEMPLATE_ID }}"
+          [ -z "$EJ_S_TMP" ] && EJ_S_TMP="template_52yj2o5"
+          EJ_S_PUB="${{ secrets.EMAILJS_SIGNUP_PUBLIC_KEY }}"
+          [ -z "$EJ_S_PUB" ] && EJ_S_PUB="8zvRzqg96H44z9txo"
+
+          # 2. Create production environment.prod.ts with obfuscated secrets substituted
           cat << EOF > src/environments/environment.prod.ts
           export const environment = {
             production: true,
-            firebase: {
-              apiKey: '${RAW_K}',
-              authDomain: '${RAW_D}',
-              projectId: '${RAW_P}',
-              storageBucket: '${RAW_B}',
-              messagingSenderId: '${RAW_M}',
-              appId: '${RAW_A}'
-            },
             fbPayload: {
               _k: '${FB_K}',
               _d: '${FB_D}',
@@ -82,6 +100,26 @@ jobs:
               _b: '${FB_B}',
               _m: '${FB_M}',
               _a: '${FB_A}'
+            },
+            tinymce: {
+              apiKey: '${TINYMCE_KEY}'
+            },
+            emailjs: {
+              contacto: {
+                serviceId: '${EJ_C_SRV}',
+                templateId: '${EJ_C_TMP}',
+                publicKey: '${EJ_C_PUB}'
+              },
+              vagas: {
+                serviceId: '${EJ_V_SRV}',
+                templateId: '${EJ_V_TMP}',
+                publicKey: '${EJ_V_PUB}'
+              },
+              signup: {
+                serviceId: '${EJ_S_SRV}',
+                templateId: '${EJ_S_TMP}',
+                publicKey: '${EJ_S_PUB}'
+              }
             },
             auth0: {
               domain: '${{ secrets.AUTH0_DOMAIN }}',

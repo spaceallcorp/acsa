@@ -42,7 +42,10 @@ export const appConfig: ApplicationConfig = {
                 redirect_uri: window.location.origin
             },
         }),
-        provideFirebaseApp(() => initializeApp(resolveFirebaseConfig((environment as any).fbPayload ?? (environment as any).firebase))),
+        provideFirebaseApp(() => {
+            const config = resolveFirebaseConfig((environment as any).fbPayload ?? (environment as any).firebase);
+            return initializeApp(config && Object.keys(config).length > 0 ? config : { apiKey: 'dummy-api-key' });
+        }),
         provideAuth(() => getAuth()),
         provideFirestore(() => getFirestore())
     ],

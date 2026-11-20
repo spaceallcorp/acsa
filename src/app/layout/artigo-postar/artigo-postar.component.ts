@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { EditorModule } from '@tinymce/tinymce-angular';
 
 import { TranslateService, TranslatePipe } from '@ngx-translate/core'; // Inserido
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-artigo-postar',
@@ -16,6 +17,7 @@ import { TranslateService, TranslatePipe } from '@ngx-translate/core'; // Inseri
   styleUrls: ['./artigo-postar.component.css']
 })
 export class ArtigoPostarComponent {
+  tinymceApiKey: string = environment.tinymce?.apiKey || '';
 
   // Data models
   editorContent: string = '';

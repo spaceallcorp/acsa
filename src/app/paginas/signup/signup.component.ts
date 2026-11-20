@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { RodapeComponent } from '../../layout/rodape/rodape.component';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import emailjs,  {type EmailJSResponseStatus } from '@emailjs/browser';
+import { environment } from '../../../environments/environment';
 
 
 @Component({
@@ -82,9 +83,14 @@ export class SignupComponent {
 
     const formData = this.partnershipForm.value;
 
-    emailjs.send('service_hxge11t', 'template_52yj2o5', formData, {
-      publicKey: '8zvRzqg96H44z9txo'
-    })
+    emailjs.send(
+      environment.emailjs.signup.serviceId,
+      environment.emailjs.signup.templateId,
+      formData,
+      {
+        publicKey: environment.emailjs.signup.publicKey
+      }
+    )
     .then(() => {
       console.log('SUCESSO');
       window.alert('Registo solicitado com sucesso! 🎉');

@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { EditorModule } from '@tinymce/tinymce-angular';
 import { EVENTO_COLLECTIONS, EventoCollection } from '../../models/evento.models';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-eventos-postar',
@@ -13,6 +14,7 @@ import { EVENTO_COLLECTIONS, EventoCollection } from '../../models/evento.models
   styleUrl: './eventos-postar.component.css'
 })
 export class EventosPostarComponent {
+  tinymceApiKey: string = environment.tinymce?.apiKey || '';
 
   // Available target collections
   collections = EVENTO_COLLECTIONS;
