@@ -69,12 +69,25 @@
           </div>
           }
 
-          @if (product.featuredImageUrl) {
-          <div class="uk-margin-large-bottom" style="display: flex; justify-content: center; align-items: center;">
-            <img [src]="product.featuredImageUrl" [alt]="'featured_img_alt' | translate" role="banner"
-              [attr.aria-label]="'featured_img_aria_label' | translate:{ name: product.name }">
-          </div>
-          }
+        @if (product.featuredImageUrl) {
+              <div class="uk-margin-medium-bottom" style="display: flex; justify-content: center; align-items: center;">
+                @if (product.ctaUrl) {
+                  <a [href]="product.ctaUrl" target="_blank" rel="noopener noreferrer">
+                    <img style="border-radius: 10px;"
+                      [src]="product.featuredImageUrl"
+                      alt="Featured Product Image"
+                      role="banner"
+                      [attr.aria-label]="'Featured Product Image ' + product.name">
+                  </a>
+                } @else {
+                  <img style="border-radius: 10px;"
+                    [src]="product.featuredImageUrl"
+                    alt="Featured Product Image"
+                    role="banner"
+                    [attr.aria-label]="'Featured Product Image ' + product.name">
+                }
+              </div>
+            }
 
           <!-- BIG NUMBERS / METRICS SECTION -->
           @if (product.metrics && product.metrics.length > 0) {
