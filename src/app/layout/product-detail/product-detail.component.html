@@ -144,6 +144,12 @@
                   <span class="btn-arrow">→</span>
                 </a>
 
+                <a class="btn-secondary btn-large" [href]="product.ctaUrl" target="_blank"
+                  rel="noopener noreferrer">
+                  {{ 'comecar' | translate }}
+                  <span class="btn-arrow">→</span>
+                </a>
+
                 @if (product.productGuideUrl) {
                 <a class="btn-secondary btn-large" [href]="product.productGuideUrl" target="_blank"
                   rel="noopener noreferrer">
